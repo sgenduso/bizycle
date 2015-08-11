@@ -10,7 +10,7 @@ var jobSchema = new mongoose.Schema({
   expiryDate: Date,
   contactInfo: Object,
   description: String,
-  requirements: String,
+  experience: String,
   source: String
 });
 

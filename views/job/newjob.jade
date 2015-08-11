@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+ h1 Add a New Job
+ form(action="/newjob", method="post")
+  label(for="title") Job Title 
+  input(type="text" id="title" name="title" placeholder="Job Title")
+  p
+  label(for="company") Company Name
+  input(type="text" id="company" name="company")
+  p
+  label(for="location") Job Location 
+  input(type="text" id="location" name="location" placeholder="City, State")
+  p
+  label(for="experience") Experience 
+  textarea(type="text" id="experience" name="experience")
+  //- div#dynamicInput
+  //-   label(for="requirements") Requirements
+  //-   input(type="text" name="myInputs[]")
+  //- p
+  //- input(type="button" value="Add Requirement" onClick="addRequirement()")
+  p
+  label(for="description") Job Description 
+  textarea(type="text") 
+  p
+  label(for="expiry") Expiration Date
+  input(type="date" id="expiry" name="expiry")
+  p
+  label(for="expiry") Activation Date
+  input(type="date" id="activate" name="activate")
+  p
+  label(for="source") Job Link
+  input(type="text" id="source" name="source")
+  p
+  input(type="submit" value="create job")
+ script(src="/dom.js")
