@@ -3,4 +3,13 @@ extends layout
 block content
   h1= title
   div.add-job
-    a(href='/add') Post a job to the board
+    p(id="cookie1")= otherCookie
+    p(id="cookie2")= currentUser
+    if loggedIn
+      a(id="addJob" href='/add') Post a job to the board
+    else
+      div(id="notLoggedIn")
+        p Post a job to the board
+      dialog(id="loginModal")
+      
+  script(src='javascripts/test.js')

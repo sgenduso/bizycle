@@ -7,7 +7,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/jobs', function(req, res, next) {
-  res.render('jobs', { title: 'JOB BOARD' });
+  // req.session.user = "akhil";
+  // req.session.otherCookie = "sankar";
+  console.log(res.locals);
+  if (req.session.user) {
+    res.render('jobs', { title: 'JOB BOARD', loggedIn: true });
+
+  } else {
+    res.render('jobs', { title: 'JOB BOARD'});
+  }
 });
+
+
 
 module.exports = router;
