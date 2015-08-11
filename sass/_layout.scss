@@ -1,0 +1,25 @@
+#closeModal {
+  text-align: right;
+}
+
+#loginModal {
+  width: 50%;
+}
+
+.login-signup {
+  display: inline-block;
+  width: 50%;
+  float: left;
+  div {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  label {
+    display: inline-block;
+    width: 200px;
+  }
+  input {
+    display: inline-block;
+    // margin-left: 200px;
+  }
+}
