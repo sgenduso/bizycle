@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.set('debug', true);
 
 var jobSchema = new mongoose.Schema({
   jobTitle: String,
@@ -8,7 +10,7 @@ var jobSchema = new mongoose.Schema({
   expiryDate: Date,
   contactInfo: Object,
   description: String,
-  experience: String,
+  requirements: String,
   source: String
 });
 

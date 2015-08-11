@@ -4,13 +4,22 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
-var db = require('./mongoose/jobModel.js');
+var db = require('./models');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+
+//WHAT DOES THE NAME DO IN COOKIE SESSIONS
+app.use(cookieSession({
+  name: 'loggedIn',
+  keys: [process.env.KEY_1, process.env.KEY_2, process.env.KEY_3],
+  httpOnly: false
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,6 +32,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+var testLocals = function (req, res, next) {
+  res.locals.currentUser = req.session.user;
+  res.locals.otherCookie = req.session.otherCookie;
+  next();
+}
+
+app.use(testLocals);
 
 app.use('/', routes);
 app.use('/users', users);

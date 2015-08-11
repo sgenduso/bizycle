@@ -3,4 +3,48 @@ extends layout
 block content
   h1= title
   div.add-job
+<<<<<<< HEAD
     a(href='/newjob') Post a job to the board
+=======
+    p(id="cookie1")= otherCookie
+    p(id="cookie2")= currentUser
+    if loggedIn
+      a(id="addJob" href='/add') Post a job to the board
+    else
+      div(id="notLoggedIn")
+        p Post a job to the board
+      dialog(id="loginModal")
+        div#closeModal
+          input(type='button' value='X')
+        div.login-signup Log In
+          form#login(action='/login' method='post')
+            div
+              label(for='login-email') Email
+              input(type='email' id='login-email' name='login_email')
+            div
+              label(for='login-password') Password
+              input(type='password' id='login-password' name='login_password')
+            div
+              input(type='submit' value='Log In')
+        div.login-signup Sign Up
+          form#signup(action='/signup' method='post')
+            div
+              label(for='signup-first-name') First Name
+              input(type='text' id='signup-first-name' name='signup_first_name')
+            div
+              label(for='signup-last-name') Last Name
+              input(type='text' id='signup-last-name' name='signup_last_name')
+            div
+              label(for='signup-email') Email
+                input(type='email' id='signup-email' name='signup_email')
+            div
+              label(for='signup-password') Password
+              input(type='password' id='signup-password' name='signup_password')
+            div
+              label(for='signup-confirm-password') Confirm Password
+              input(type='password' id='signup-confirm-password' name='signup_confirm_password')
+            div
+              input(type='submit' value='Sign Up')
+      
+  script(src='javascripts/test.js')
+>>>>>>> 45b2e0bed5f36c9e2cd40c5374205c8fafece6ec

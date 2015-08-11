@@ -1,8 +1,18 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+#closeModal {
+  text-align: right; }
 
-a {
-  color: #00B7FF;
-}
+#loginModal {
+  width: 50%; }
+
+.login-signup {
+  display: inline-block;
+  width: 50%;
+  float: left; }
+  .login-signup div {
+    margin-bottom: 5px;
+    margin-top: 5px; }
+  .login-signup label {
+    display: inline-block;
+    width: 200px; }
+  .login-signup input {
+    display: inline-block; }
