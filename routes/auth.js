@@ -34,13 +34,36 @@ router.post('/signup', function (req, res, next) {
       .then(function (newUser) {
         req.session.userId = newUser._id;
         req.session.userFirstName = newUser.firstName;
-        res.redirect('/jobs');
+        res.redirect('/newjob');
       });
     } else {
-      res.render('jobs', { title: 'JOB BOARD', error: 'This email is already associated with an account' });
+      res.render('jobs', { title: 'JOB BOARD', error: 'This email is already associated with an account.'});
     }
   });
 });
+
+router.post('/login', function (req, res, next) {
+  console.log("check this");
+  var user = req.body;
+  db.User.findOne({email: user.login_email})
+  .then(function (foundUser) {
+    if(foundUser) {
+      if(bcrypt.compareSync(user.login_password, foundUser.password)) {
+        req.session.userId = foundUser._id;
+        req.session.userFirstName = foundUser.firstName;
+        res.redirect('/newjob')
+      }
+      else {
+        res.render('jobs', { title: 'JOB BOARD', error: 'Incorrect password.'});
+      }
+    }
+    else {
+      res.render('jobs', { title: 'JOB BOARD', error: 'User not found.'});
+    }
+  })
+})
+
+
 
 
 
