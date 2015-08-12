@@ -33,17 +33,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 var testLocals = function (req, res, next) {
-  res.locals.currentUser = req.session.user;
-  res.locals.otherCookie = req.session.otherCookie;
+  res.locals.userId = req.session.userId;
+  res.locals.userFirstName = req.session.userFirstName;
   next();
-}
+};
 
 app.use(testLocals);
 
 app.use('/', index);
 app.use('/', auth);
 app.use('/users', users);
-app.use('/', jobRoutes)
+app.use('/', jobRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
