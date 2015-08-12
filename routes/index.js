@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var validate = require('../public/validate.js')
 
 var db = require('../models');
 
