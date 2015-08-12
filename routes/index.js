@@ -3,7 +3,6 @@ var router = express.Router();
 
 var db = require('../models');
 
-
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Colorado Bikes + Biz + Beer' });
 });
@@ -12,9 +11,6 @@ router.get('/jobs', function(req, res, next) {
   db.Job.find({}, function (err, jobs) {
     console.log(jobs);
   });
-  // req.session.user = "akhil";
-  // req.session.otherCookie = "sankar";
-  console.log(res.locals);
   if (req.session.user) {
     res.render('jobs', { title: 'JOB BOARD', loggedIn: true });
 
@@ -31,8 +27,9 @@ router.get('/newjob', function (req, res, next) {
   res.render('job/newjob');
 });
 
+
 router.post('/newjob', function (req, res, next) {
-  Job.create(
+  db.Job.create(
     {
       jobTitle: req.body.title,
       companyName: req.body.company,
