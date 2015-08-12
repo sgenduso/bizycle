@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 // mongoose.set('debug', true);
 
 module.exports = {
-  Job: require('./jobModel')
+  Job: require('./jobModel'),
+  User: require('./userModel.js')
 };
 
 // module.exports.Job = require('./jobModel')

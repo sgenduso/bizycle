@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOLAB_URI);
+mongoose.createConnection(process.env.MONGOLAB_URI);
 mongoose.set('debug', true);
 
 var jobSchema = new mongoose.Schema({
