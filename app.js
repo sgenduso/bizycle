@@ -8,7 +8,9 @@ var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
 var db = require('./models');
 
-var routes = require('./routes/index');
+var index = require('./routes/index.js')
+var auth = require('./routes/auth.js');
+var jobRoutes = require('./routes/jobRoutes.js')
 var users = require('./routes/users');
 
 var app = express();
@@ -40,8 +42,10 @@ var testLocals = function (req, res, next) {
 
 app.use(testLocals);
 
-app.use('/', routes);
+app.use('/', index);
+app.use('/', auth);
 app.use('/users', users);
+app.use('/', jobRoutes)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
