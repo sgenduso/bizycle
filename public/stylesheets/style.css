@@ -1,7 +1,7 @@
-#closeModal {
+#close-modal {
   text-align: right; }
 
-#loginModal {
+#login-modal {
   width: 50%; }
 
 .login-signup {
@@ -16,3 +16,6 @@
     width: 200px; }
   .login-signup input {
     display: inline-block; }
+
+#not-logged-in p {
+  cursor: pointer; }
