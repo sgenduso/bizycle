@@ -15,8 +15,7 @@ var app = express();
 
 app.use(cookieSession({
   name: 'loggedIn',
-  keys: [process.env.KEY_1, process.env.KEY_2, process.env.KEY_3],
-  httpOnly: false
+  keys: [process.env.KEY_1, process.env.KEY_2, process.env.KEY_3]
 }));
 
 // view engine setup

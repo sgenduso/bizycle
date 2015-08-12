@@ -3,8 +3,6 @@ extends layout
 block content
   h1= title
   div.add-job
-    p(id="cookie1")= otherCookie
-    p(id="cookie2")= currentUser
     if loggedIn
       a(id="addJob" href='/add') Post a job to the board
     else
