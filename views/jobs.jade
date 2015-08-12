@@ -4,7 +4,7 @@ block content
   h1= title
   div.add-job
     if loggedIn
-      a(id="add-job" href='/add') Post a job to the board
+      a(id="add-job" href='/newjob') Post a job to the board
       if jobs 
         each job in jobs
           .newJob
@@ -19,10 +19,6 @@ block content
             .bottom
               p= job.description
               p= job.source
-            
-            
-    if userId
-      a(id="add-job" href='/newjob') Post a job to the board
     else
       div
         p(id="not-logged-in") Post a job to the board
