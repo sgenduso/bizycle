@@ -4,12 +4,12 @@ block content
   h1= title
   div.add-job
     if loggedIn
-      a(id="addJob" href='/add') Post a job to the board
+      a(id="add-job" href='/add') Post a job to the board
     else
-      div(id="notLoggedIn")
+      div(id="not-logged-in")
         p Post a job to the board
-      dialog(id="loginModal")
-        div#closeModal
+      dialog(id="login-modal")
+        div#close-modal
           input(type='button' value='X')
         if error
           div#errors.errors=error
@@ -17,29 +17,29 @@ block content
           form#login(action='/login' method='post')
             div
               label(for='login-email') Email
-              input(type='email' id='login-email' name='login_email')
+              input(type='email' id='login-email' name='login_email' required)
             div
               label(for='login-password') Password
-              input(type='password' id='login-password' name='login_password')
+              input(type='password' id='login-password' name='login_password' required)
             div
               input#submit-login(type='submit' value='Log In')
         div.login-signup Sign Up
           form#signup(action='/signup' method='post')
             div
               label(for='signup-first-name') First Name
-              input(type='text' id='signup-first-name' name='signup_first_name')
+              input(type='text' id='signup-first-name' name='signup_first_name' required)
             div
               label(for='signup-last-name') Last Name
-              input(type='text' id='signup-last-name' name='signup_last_name')
+              input(type='text' id='signup-last-name' name='signup_last_name' required)
             div
               label(for='signup-email') Email
-                input(type='email' id='signup-email' name='signup_email')
+                input(type='email' id='signup-email' name='signup_email' required)
             div
               label(for='signup-password') Password
-              input(type='password' id='signup-password' name='signup_password')
+              input(type='password' id='signup-password' name='signup_password' required)
             div
               label(for='signup-confirm-password') Confirm Password
-              input(type='password' id='signup-confirm-password' name='signup_confirm_password')
+              input(type='password' id='signup-confirm-password' name='signup_confirm_password' required)
             div
               input#submit-signup(type='submit' value='Sign Up')
       
