@@ -3,11 +3,6 @@ extends layout
 block content
   h1= title
   div.add-job
-<<<<<<< HEAD
-    a(href='/newjob') Post a job to the board
-=======
-    p(id="cookie1")= otherCookie
-    p(id="cookie2")= currentUser
     if loggedIn
       a(id="addJob" href='/add') Post a job to the board
     else
@@ -47,4 +42,3 @@ block content
               input(type='submit' value='Sign Up')
       
   script(src='javascripts/test.js')
->>>>>>> 45b2e0bed5f36c9e2cd40c5374205c8fafece6ec
