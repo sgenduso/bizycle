@@ -39,7 +39,6 @@ var testLocals = function (req, res, next) {
 };
 
 app.use(testLocals);
-
 app.use('/', index);
 app.use('/', auth);
 app.use('/users', users);
