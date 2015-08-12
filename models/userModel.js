@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-mongoose.createConnection(process.env.MONGOLAB_URI);
-mongoose.set('debug', true);
+// mongoose.createConnection(process.env.MONGOLAB_URI);
+// mongoose.set('debug', true);
 
 var userSchema = new mongoose.Schema({
   firstName: String,
