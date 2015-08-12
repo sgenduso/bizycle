@@ -5,6 +5,22 @@ block content
   div.add-job
     if loggedIn
       a(id="add-job" href='/add') Post a job to the board
+      if jobs 
+        each job in jobs
+          .newJob
+            .left
+              a(href=job.source)
+                h1= job.jobTitle
+              p= job.companyName
+            .right
+              p= job.location
+              p Date Posted
+                = job.activation
+            .bottom
+              p= job.description
+              p= job.source
+            
+            
     else
       div(id="not-logged-in")
         p Post a job to the board

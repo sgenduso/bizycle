@@ -7,6 +7,7 @@ var db = require('../models');
 router.get('/jobs', function(req, res, next) {
   db.Job.find({})
   .then(function (allJobs) {
+      console.log(allJobs);
     if (req.session.user) {
       res.render('jobs', { jobs: allJobs, title: 'JOB BOARD', loggedIn: true });
     }

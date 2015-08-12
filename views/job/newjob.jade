@@ -10,13 +10,13 @@ block content
   input(type="text" id="title" name="title" placeholder="Job Title")
   p
   label(for="company") Company Name
-  input(type="text" id="company" name="company")
+  input(type="text" id="company" name="company" placeholder='Company Name')
   p
   label(for="location") Job Location 
   input(type="text" id="location" name="location" placeholder="City, State")
   p
   label(for="experience") Experience 
-  textarea(type="text" id="experience" name="experience")
+  textarea(type="text" id="experience" name="experience" placeholder='Experience')
   //- div#dynamicInput
   //-   label(for="requirements") Requirements
   //-   input(type="text" name="myInputs[]")
@@ -24,7 +24,7 @@ block content
   //- input(type="button" value="Add Requirement" onClick="addRequirement()")
   p
   label(for="description") Job Description 
-  textarea(type="text") 
+  textarea(type="text" name='description' placeholder='Job Description') 
   p
   label(for="expiry") Expiration Date
   input(type="date" id="expiry" name="expiry")
@@ -32,8 +32,11 @@ block content
   label(for="activate") Activation Date
   input(type="date" id="activate" name="activate")
   p
+  label(for='contact') Contact Information
+  textarea(type='text' id='contact' name='contact')
+  p
   label(for="source") Job Link
-  input(type="text" id="source" name="source")
+  input(type="text" id="source" name="source" placeholder='Job URL')
   p
   input(type="submit" value="create job")
  script(src="/dom.js")

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var validate = require('..lib/validate.js')
+var validate = require('../lib/validate.js')
 
 
 var db = require('../models');
@@ -19,24 +19,24 @@ router.post('/newjob', function (req, res, next) {
       jobTitle: req.body.title,
       companyName: req.body.company,
       location: req.body.location,
-      datePosted: new Date(),
+      activationDate: req.body.activate,
       expiryDate: req.body.expiry,
-      contactInfo: Object,
+      contactInfo: req.body.contact,
       description: req.body.description,
       requirements: req.body.requirements,
       source: req.body.source
     },
     function(err, job){
       if(err){
-        console.log(err);
+        // console.log(err);
       } else {
-        console.log(job);
+        // console.log(job);
       }
     }
   ).then(function () {
     res.redirect('/jobs');
-  }
   });
+  }
 });
 
 module.exports = router;
