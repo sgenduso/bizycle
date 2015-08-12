@@ -11,6 +11,8 @@ block content
       dialog(id="loginModal")
         div#closeModal
           input(type='button' value='X')
+        if error
+          div#errors.errors=error
         div.login-signup Log In
           form#login(action='/login' method='post')
             div
@@ -20,7 +22,7 @@ block content
               label(for='login-password') Password
               input(type='password' id='login-password' name='login_password')
             div
-              input(type='submit' value='Log In')
+              input#submit-login(type='submit' value='Log In')
         div.login-signup Sign Up
           form#signup(action='/signup' method='post')
             div
@@ -39,6 +41,6 @@ block content
               label(for='signup-confirm-password') Confirm Password
               input(type='password' id='signup-confirm-password' name='signup_confirm_password')
             div
-              input(type='submit' value='Sign Up')
+              input#submit-signup(type='submit' value='Sign Up')
       
   script(src='javascripts/test.js')

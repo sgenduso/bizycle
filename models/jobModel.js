@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 mongoose.createConnection(process.env.MONGOLAB_URI);
 mongoose.set('debug', true);
 
+
 var jobSchema = new mongoose.Schema({
   jobTitle: String,
   companyName: String,
