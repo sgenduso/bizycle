@@ -4,16 +4,19 @@ var router = express.Router();
 var db = require('../models');
 
 router.get('/jobs', function(req, res, next) {
-  db.Job.find({})
-  .then(function (allJobs) {
+  db.Job.find({}, function (err, allJobs) {
     console.log(allJobs);
-    if (req.session.user) {
-      res.render('jobs', { jobs: allJobs, title: 'JOB BOARD', loggedIn: true });
-    }
-    else {
-      res.render('jobs', { jobs: allJobs, title: 'JOB BOARD'});
-    }
-  })
+  });
+    res.render('jobs');
+  // .then(function (allJobs) {
+  //   console.log(allJobs);
+  //   if (req.session.user) {
+  //     res.render('jobs', { jobs: allJobs, title: 'JOB BOARD', loggedIn: true });
+  //   }
+  //   else {
+  //     res.render('jobs', { jobs: allJobs, title: 'JOB BOARD'});
+  //   }
+  // });
 });
 
 router.post('/signup', function (req, res, next) {

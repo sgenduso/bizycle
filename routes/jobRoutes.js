@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var db = require('../models')
+var db = require('../models');
 
 router.get('/newjob', function (req, res, next) {
   res.render('job/newjob');
