@@ -9,10 +9,13 @@ if (errors) {
   loginModal.showModal();
 }
 
-notLoggedIn.addEventListener('click', function () {
-  loginModal.showModal();
-});
+if(notLoggedIn) {
 
-closeModal.addEventListener('click', function () {
-  loginModal.close();
-});
+  notLoggedIn.addEventListener('click', function () {
+    loginModal.showModal();
+  });
+
+  closeModal.addEventListener('click', function () {
+    loginModal.close();
+  });
+}

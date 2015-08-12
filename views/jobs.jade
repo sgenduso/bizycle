@@ -3,8 +3,8 @@ extends layout
 block content
   h1= title
   div.add-job
-    if loggedIn
-      a(id="add-job" href='/add') Post a job to the board
+    if userId
+      a(id="add-job" href='/newjob') Post a job to the board
     else
       div(id="not-logged-in")
         p Post a job to the board
