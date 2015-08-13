@@ -1,4 +1,4 @@
-var express = require('express');
+  var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcrypt');
 
@@ -49,8 +49,6 @@ router.post('/login', function (req, res, next) {
     }
   })
 })
-
-
 
 
 
