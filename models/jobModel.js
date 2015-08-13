@@ -13,7 +13,8 @@ var jobSchema = new mongoose.Schema({
   contactInfo: Object,
   description: String,
   requirements: String,
-  source: String
+  source: String,
+  jobPoster: String
 });
 
 var Job = mongoose.model('Job', jobSchema);

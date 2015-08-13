@@ -10,10 +10,11 @@ router.get('/newjob', function (req, res, next) {
 
 router.post('/newjob', function (req, res, next) {
   var errorCheck = validate.validate(req.body.title, req.body.company, req.body.location, req.body.description, req.body.expiry);
+  var userId = req.session.userId;
   if(errorCheck.length > 0){
     res.render('newjob', {errors: errorCheck});
   } else {
-    databaseQueries.newJobs(req.body)
+    databaseQueries.newJobs(userId, req.body)
   .then(function () {
     res.redirect('/jobs');
   });
