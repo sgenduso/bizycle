@@ -14,6 +14,7 @@ router.post('/newjob', function (req, res, next) {
   if(errorCheck.length > 0){
     res.render('newjob', {errors: errorCheck});
   } else {
+    console.log(req.body, "req body inserted");
     databaseQueries.newJobs(userId, req.body)
   .then(function () {
     res.redirect('/jobs');

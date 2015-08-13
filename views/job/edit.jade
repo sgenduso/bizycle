@@ -1,0 +1,32 @@
+extends ../layout
+block content
+  h1 Edit Job 
+  form(action="/edit", method="post")
+   label(for="title") Job Title 
+   input(type="text" id="title" name="title" placeholder="Job Title" value= job.jobTitle) 
+   p
+   label(for="company") Company Name
+   input(type="text" id="company" name="company" placeholder='Company Name' value= job.companyName)
+   p
+   label(for="location") Job Location 
+   input(type="text" id="location" name="location" placeholder="City, State" value= job.location)
+   p
+   label(for="experience") Experience 
+   textarea(type="text" id="experience" name="experience" placeholder='Experience') Testing this
+   p
+   label(for="description") Job Description 
+   textarea(type="text" name='description' placeholder='Job Description')= job.description 
+   p
+   label(for="expiry") Expiration Date
+   input(type="date" id="expiry" name="expiry" value= "2013-01-08")
+   p
+   label(for="activate") Activation Date
+   input(type="date" id="activate" name="activate" value= job.datePosted)
+   p
+   label(for='contact') Contact Information
+   textarea(type='text' id='contact' name='contact')= job.contactInfo
+   p
+   label(for="source") Job Link
+   input(type="text" id="source" name="source" placeholder='Job URL' value= job.source)
+   p
+   input(type="submit" value="create job")
