@@ -18,7 +18,7 @@ block content
    textarea(type="text" name='description' placeholder='Job Description')= job.description 
    p
    label(for="expiry") Expiration Date
-   input(type="date" id="expiry" name="expiry" value= "2013-01-08")
+   input(type="date" id="expiry" name="expiry" value= job.expiryDate)
    p
    label(for="activate") Activation Date
    input(type="date" id="activate" name="activate" value= job.datePosted)
