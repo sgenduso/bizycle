@@ -7,4 +7,7 @@ block content
       a(href='/job/'+ job._id + '/edit')= job.jobTitle
       p= job.location
       p= job.description
-  
+      div
+        a(href='/job/' + job._id + '/delete') Delete Post
+  div
+    a(href='/profile/' + userId + '/delete') Delete Profile
