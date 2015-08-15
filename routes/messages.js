@@ -21,9 +21,22 @@ router.post('/messages/:id/delete', function (req, res, next) {
 });
 
 router.get('/messages/liked/:id', function (req, res, next) {
-  db.Message.update({_id: req.params.id}, {$push: {likedbyUsers: req.session.userId}}).then(function () {
-    res.json(req.session.userId);
-  });
+  db.Message.findOne({_id: req.params.id}).then(function (message) {
+    var userInLikedArray;
+    if (message.likedByUsers.indexOf(req.session.userId) >0 -1) {
+      db.Message.update({_id: req.params.id}, {$pull: {likedByUsers: req.session.userId}})
+      .then(function (message) {
+        userInLikedArray = false;
+        res.json(userInLikedArray);
+      });
+    } else {
+      db.Message.update({_id: req.params.id}, {$push: {likedByUsers: req.session.userId}})
+      .then(function (message) {
+        userInLikedArray = true;
+        res.json(userInLikedArray);
+      });
+    }
+});
 });
 
 router.post('/messages', function (req, res, next) {

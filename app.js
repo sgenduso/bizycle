@@ -14,7 +14,6 @@ var jobRoutes = require('./routes/jobRoutes.js');
 var messages = require('./routes/messages');
 var users = require('./routes/users');
 var profile = require('./routes/profile');
-
 var app = express();
 
 app.use(cookieSession({

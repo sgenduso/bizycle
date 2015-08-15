@@ -17,21 +17,15 @@
   .login-signup input {
     display: inline-block; }
 
-#not-logged-in {
-  display: inline-block;
-  cursor: pointer; }
-
-.message{
+.message {
   border: 1px solid black;
   display: inline-block;
   width: 300px;
-  margin:20px;
-}
+  margin: 20px; }
 
-.delete{
- float: right;
-}
+.delete {
+  float: right; }
 
-i{
-  font-size: 10px;
-}
+#not-logged-in {
+  display: inline-block;
+  cursor: pointer; }

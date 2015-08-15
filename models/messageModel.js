@@ -9,7 +9,7 @@ var messageSchema = new mongoose.Schema({
   body: String,
   subject: String,
   datePosted: Date,
-  likedbyUsers: Array,
+  likedByUsers: Array,
   comments: Array,
 });
 
