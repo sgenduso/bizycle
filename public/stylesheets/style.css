@@ -19,3 +19,18 @@
 
 #not-logged-in p {
   cursor: pointer; }
+
+.message{
+  border: 1px solid black;
+  display: inline-block;
+  width: 300px;
+  margin:20px;
+}
+
+.delete{
+ float: right;
+}
+
+i{
+  font-size: 10px;
+}
