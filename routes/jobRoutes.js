@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var validate = require('../lib/validate.js');
 var db = require('../models');
+
 var databaseQueries = require('../lib/database.js');
 
 router.get('/newjob', function (req, res, next) {
@@ -14,6 +15,10 @@ router.post('/newjob', function (req, res, next) {
   if(errorCheck.length > 0){
     res.render('newjob', {errors: errorCheck});
   } else {
+    console.log(req.body, "req body before conversion");
+    // req.body.activate = timestampToDate(req.body.activate);
+    // req.body.expiry = timestampToDate(req.body.expiry);
+    console.log(req.body, "req body inserted");
     databaseQueries.newJobs(userId, req.body)
   .then(function () {
     res.redirect('/jobs');

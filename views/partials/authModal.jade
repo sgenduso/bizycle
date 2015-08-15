@@ -1,6 +1,6 @@
 dialog(id="login-modal")
-  div#close-modal
-    input(type='button' value='X')
+  div
+    input#close-modal(type='button' value='X')
   if error
     div#errors.errors=error
   div.login-signup Log In
@@ -33,4 +33,4 @@ dialog(id="login-modal")
       div
         input#submit-signup(type='submit' value='Sign Up')
 
-script(src='javascripts/test.js')
+script(src='javascripts/login.js')

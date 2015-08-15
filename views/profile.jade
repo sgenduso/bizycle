@@ -2,3 +2,12 @@ extends layout
 block content
 
   h1 Your Profile
+  if jobs
+    each job in jobs    
+      a(href='/job/'+ job._id + '/edit')= job.jobTitle
+      p= job.location
+      p= job.description
+      div
+        a(href='/job/' + job._id + '/delete') Delete Post
+  div
+    a(href='/profile/' + userId + '/delete') Delete Profile

@@ -11,6 +11,7 @@ var db = require('./models');
 var index = require('./routes/index.js');
 var auth = require('./routes/auth.js');
 var jobRoutes = require('./routes/jobRoutes.js');
+var messages = require('./routes/messages');
 var users = require('./routes/users');
 var profile = require('./routes/profile');
 
@@ -44,6 +45,7 @@ app.use('/', index);
 app.use('/', auth);
 app.use('/users', users);
 app.use('/', jobRoutes);
+app.use('/', messages);
 app.use('/', profile);
 
 // catch 404 and forward to error handler
