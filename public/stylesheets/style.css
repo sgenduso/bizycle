@@ -17,5 +17,15 @@
   .login-signup input {
     display: inline-block; }
 
-#not-logged-in p {
+.message {
+  border: 1px solid black;
+  display: inline-block;
+  width: 300px;
+  margin: 20px; }
+
+.delete {
+  float: right; }
+
+#not-logged-in {
+  display: inline-block;
   cursor: pointer; }

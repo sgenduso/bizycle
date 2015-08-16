@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+  h1 Welcome to the Message Board
+  p#post-msg Post Message to Board
+  for item in messages
+   div.message
+    form(action="/messages/"+item._id+"/delete" method="post")
+     input.delete(type='submit' value ="X")
+    p
+    Strong Subject: 
+    =item.subject 
+    p=item.body
+    p=item.datePosted
+    //white icon
+    i.thumbs-up(class="fa fa-thumbs-o-up fa-2x" id=item._id)
+    //black icon
+    //- i(class="fa fa-thumbs-up fa-2x")
+  dialog#new-msg-modal
+    form(action='/messages' method='post')
+      div
+        input#close-msg-modal(type='button' value='X')
+      div
+        label(for='subject') Subject
+        input(type='text', id='submit', name='subject' required)
+      div
+        label(for='body') Message
+        textarea(id='body', name='message_body' required)
+      div
+        input(type='submit' value='Post Message')
+  script(src='javascripts/messageboard.js')
+  
+  
+
+ 

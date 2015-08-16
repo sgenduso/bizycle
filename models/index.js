@@ -5,5 +5,6 @@ mongoose.set('debug', true);
 
 module.exports = {
   Job: require('./jobModel'),
-  User: require('./userModel.js')
+  User: require('./userModel.js'),
+  Message: require('./messageModel.js')
 };
