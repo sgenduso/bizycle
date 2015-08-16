@@ -5,13 +5,44 @@ var db = require('../models');
 var databaseQueries = require('../lib/database.js');
 
 router.get('/messages', function (req, res, next) {
-  db.Message.find().then(function (messages) {
-   messages.forEach(function (message) {
-     message.datePosted = databaseQueries.dateParse(message.datePosted);
-   });
-  res.render("messages/messageboard", {messages:messages});
+  return db.Message.find().then(function (messages) {
+  if (messages.length>0){
+    var msgPromises = messages.map(function (message, i) {
+      return db.User.findOne({_id:message.userId}).then(function (user) {
+        messages[i].dateNew = databaseQueries.dateParse(messages[i].datePosted);
+        messages[i].postedBy = user.firstName+" "+user.lastName.substring(0,0)+".";
+      });
+    });
+    Promise.all(msgPromises).then(function () {
+       res.render("messages/messageboard", {messages:messages});
+     });
+    } else{
+    res.render("messages/messageboard");
+  }
+ });
 });
-});
+
+
+
+
+// router.get('/messages', function (req, res, next) {
+//   return db.Message.find().then(function (messages) {
+//   if (messages.length>0){
+//    messages.forEach(function (message) {
+//      return db.User.findOne({_id:message.userId}).then(function (user) {
+//       message.dateNew = databaseQueries.dateParse(message.datePosted);
+//       message.postedBy = user.firstName+" "+user.lastName.substring(0,0)+".";
+//       return messages;
+//     }).then(function (messages) {
+//
+//   res.render("messages/messageboard", {messages:messages});
+// });
+// });
+// }else{
+//   res.render("messages/messageboard");
+// }
+// });
+// });
 
 router.post('/messages/:id/delete', function (req, res, next) {
   db.Message.remove({_id:req.params.id}).then(function (message) {
@@ -51,14 +82,14 @@ router.get('/messages/liked/:id', function (req, res, next) {
 });
 
 router.post('/messages', function (req, res, next) {
-  db.Message.create({
+  return db.Message.create({
       userId: req.session.userId,
       body: req.body.message_body,
       subject: req.body.subject,
       datePosted: new Date(),
       likedbyUsers: [],
       comments: [],
-    }).then(function () {
+    }).then(function (created) {
   res.redirect('/messages');
 
  });
