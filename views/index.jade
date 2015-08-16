@@ -6,7 +6,8 @@ block content
       p(class="not-logged-in" id='') Sign In
       include ./partials/authModal.jade
     else
-      p= userFirstName
+      p Hi,
+        =userFirstName
   h1= title
   div
     a(href='/jobs') Job Board
@@ -14,4 +15,4 @@ block content
     a(href='/profile') Your Profile
   div
     a(href='/messages') Message Board
-  script(src='javascripts/test.js')
+  script(src='javascripts/login.js')
