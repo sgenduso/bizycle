@@ -35,7 +35,7 @@ router.post('/signup', function (req, res, next) {
 router.post('/login', function (req, res, next) {
   var user = req.body;
   var path = req.body.path
-  db.User.findOne({email: user.login_email})
+  databaseQueries.findUser(user)
   .then(function (foundUser) {
     if(foundUser) {
       if(bcrypt.compareSync(user.login_password, foundUser.password)) {

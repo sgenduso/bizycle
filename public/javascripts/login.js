@@ -33,9 +33,11 @@ if(notLoggedInElements) {
       appendDivs[1].appendChild(hiddenInput);
 
       loginModal.showModal();
-      closeModal.addEventListener('click', function () {
-        loginModal.close();
-      });
-    })
+      console.log("HITS SHOW MODAL METHOD");
+    });
   }
+  closeModal.addEventListener('click', function () {
+    loginModal.close();
+    console.log('HITS event listener');
+  })
 }
