@@ -46,7 +46,7 @@ app.use(testLocals);
 app.use('/', index);
 app.use('/', auth);
 app.use('/users', users);
-app.use('/', jobRoutes);
+app.use('/jobs', jobRoutes);
 app.use('/', messages);
 app.use('/', profile);
 

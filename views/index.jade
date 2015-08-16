@@ -3,14 +3,14 @@ block content
 
   header 
     if !userId
-      p(class="not-logged-in" id='') Sign In
+      p(class="not-logged-in" id='index') Sign In
       include ./partials/authModal.jade
     else
       p Hi, 
         =userFirstName
   h1= title
   div
-    a(href='/jobs') Job Board
+    a(href='/jobs/alljobs') Job Board
   div
     if userId
       a(href='/profile') Your Profile

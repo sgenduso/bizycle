@@ -9,7 +9,7 @@ router.use('/newjob', function (req,res, next) {
   if(req.session.userId){
     next()
   } else {
-    res.redirect('/jobs')
+    res.redirect('jobs/alljobs')
   }
 })
 
@@ -23,13 +23,12 @@ router.post('/newjob', function (req, res, next) {
   if(errorCheck.length > 0){
     res.render('newjob', {errors: errorCheck});
   } else {
-    console.log(req.body, "req body before conversion");
+    console.log(req.body, "JOB OBJECT BEFORE QUERY");
     // req.body.activate = timestampToDate(req.body.activate);
     // req.body.expiry = timestampToDate(req.body.expiry);
-    console.log(req.body, "req body inserted");
     databaseQueries.newJobs(userId, req.body)
   .then(function () {
-    res.redirect('/jobs');
+    res.redirect('jobs/alljobs');
   });
   }
 });

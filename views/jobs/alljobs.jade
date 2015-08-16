@@ -1,17 +1,17 @@
-extends layout
+extends ../layout
 
 block content
   header
     if !userId
-      p(class="not-logged-in" id='jobs') Sign In
-      include ./partials/authModal.jade
+      p(class="not-logged-in" id='jobs/alljobs') Sign In
+      include ../partials/authModal.jade
     else
       p Hi,
         =userFirstName
   h1= title
   div.add-job
     if loggedIn
-      a(id="add-job" href='/newjob') Post a job to the board
+      a(id="add-job" href='jobs/newjob') Post a job to the board
       if jobs 
         each job in jobs
           .newJob
@@ -29,8 +29,8 @@ block content
     else
       div
         p= userID
-        p(class="not-logged-in" id='newjob') Post a job to the board
-        include ./partials/authModal.jade
+        p(class="not-logged-in" id='jobs/newjob') Post a job to the board
+        include ../partials/authModal.jade
         if jobs 
           each job in jobs
             .newJob

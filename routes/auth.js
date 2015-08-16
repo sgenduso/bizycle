@@ -5,32 +5,51 @@ var bcrypt = require('bcrypt');
 var db = require('../models');
 var databaseQueries = require('../lib/database.js')
 
-router.get('/jobs', function(req, res, next) {
+router.get('/jobs/alljobs', function(req, res, next) {
   var userCookie = req.session.userId;
   databaseQueries.findJobs(userCookie)
   .then(function (returnedVals) {
     allJobs = returnedVals[0];
     loggedIn = returnedVals[1];
-    res.render('jobs', { jobs: allJobs, title: 'JOB BOARD', loggedIn: loggedIn});
+    res.render('jobs/alljobs', { jobs: allJobs, title: 'JOB BOARD', loggedIn: loggedIn});
   })
 });
 
-router.post('/signup', function (req, res, next) {
-  var user = req.body;
-  console.log(req.body.path);
-  var path = req.body.path;
-  console.log(path,"PATH");
-    databaseQueries.signUp(user).then(function (newUser) {
-      if(newUser){
-        req.session.userId = newUser._id;
-        req.session.userFirstName = newUser.firstName;
-        res.redirect('/' + path);
-      }
-     else {
-      res.render(path, { title: 'JOB BOARD', error: 'This email is already associated with an account.'});
-    }
-  });
-});
+router.post('/findme', function (req, res, next) {
+  console.log(req.body);
+  res.send('got the message');
+})
+
+// router.post('/signup', function (req, res, next) {
+//     if(req.body != "final twilio test") {
+//     res.send('got the message!')
+//     }
+//     else {
+//     items.find({})
+//       .then(function (allItems) {
+//         console.log(allItems, "allitems");
+//         res.send({items: allItems});
+//         console.log("sent to the other side");
+//       })
+//   }
+  // console.log(req.body);
+  // res.json({firstName: 'hey'})
+  // res.render('profile')
+  // var user = req.body;
+  // var path = req.body.path;
+  //   databaseQueries.signUp(user).then(function (newUser) {
+  //     if(newUser){
+  //       req.session.userId = newUser._id;
+  //       req.session.userFirstName = newUser.firstName;
+  //       console.log(path, "REDIRECT TO PATH");
+  //       res.redirect('/' + path);
+  //     }
+  //    else {
+  //      console.log(path, "RENDERED WITH ERRORS");
+  //     res.render(path, { title: 'JOB BOARD', error: 'This email is already associated with an account.'});
+  //   }
+  // });
+// });
 
 router.post('/login', function (req, res, next) {
   var user = req.body;
@@ -41,14 +60,17 @@ router.post('/login', function (req, res, next) {
       if(bcrypt.compareSync(user.login_password, foundUser.password)) {
         req.session.userId = foundUser._id;
         req.session.userFirstName = foundUser.firstName;
+        console.log(path, 'WENT TO REDIRECT');
         res.redirect('/' + path)
       }
       else {
+        console.log(path, "PASSWORD DONt MATCH");
         res.render(path, { title: 'JOB BOARD', error: 'Incorrect password.'});
       }
     }
     else {
-      res.render(path, { title: 'JOB BOARD', error: 'User not found.'});
+      console.log(path, 'USER NOT FOUND');
+      res.render(path, { title: 'back again', error: 'User not found.'});
     }
   })
 })
