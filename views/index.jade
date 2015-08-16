@@ -6,13 +6,18 @@ block content
       p(class="not-logged-in" id='') Sign In
       include ./partials/authModal.jade
     else
-      p Hi,
+      p Hi, 
         =userFirstName
   h1= title
   div
     a(href='/jobs') Job Board
   div
-    a(href='/profile') Your Profile
+    if userId
+      a(href='/profile') Your Profile
+    else
+      div
+        p(class="not-logged-in" id='profile') Your Profile
+        include ./partials/authModal.jade
   div
     a(href='/messages') Message Board
   script(src='javascripts/login.js')

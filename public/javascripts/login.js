@@ -11,11 +11,13 @@ var appendDivs = document.getElementsByClassName('append');
 
 if (errors) {
   loginModal.showModal();
+  closeModal.addEventListener('click', function () {
+    loginModal.close();
+  });
 }
 
 if(notLoggedInElements) {
   for (var i = 0; i < notLoggedInElements.length; i++) {
-    console.log(notLoggedInElements[i]);
     notLoggedInElements[i].addEventListener('click', function () {
       hiddenInput.type='text';
       hiddenInput.style.display='none'
@@ -36,5 +38,4 @@ if(notLoggedInElements) {
       loginModal.close();
     });
   }
-
 }
