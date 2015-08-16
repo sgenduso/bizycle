@@ -137,3 +137,34 @@ notLoggedInElements[0].addEventListener('click', function () {
 //       loginModal.close();
 //     });
 // }
+
+//   closeModal.addEventListener('click', function () {
+//     loginModal.close();
+//   });
+// }
+
+// if(notLoggedInElements) {
+//   for (var i = 0; i < notLoggedInElements.length; i++) {
+//     notLoggedInElements[i].addEventListener('click', function () {
+//       hiddenInput.type='text';
+//       hiddenInput.style.display='none'
+//       hiddenInput.value=this.id;
+//       hiddenInput.name='path';
+//
+//       hiddenInputOne.type='text';
+//       hiddenInputOne.style.display='none'
+//       hiddenInputOne.value=this.id;
+//       hiddenInputOne.name='path';
+//
+//       appendDivs[0].appendChild(hiddenInputOne);
+//       appendDivs[1].appendChild(hiddenInput);
+//
+//       loginModal.showModal();
+//       console.log("HITS SHOW MODAL METHOD");
+//     });
+//   }
+//   closeModal.addEventListener('click', function () {
+//     loginModal.close();
+//     console.log('HITS event listener');
+//   })
+// }
