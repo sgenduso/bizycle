@@ -14,7 +14,7 @@ router.get('/messages', function (req, res, next) {
       });
     });
     Promise.all(msgPromises).then(function () {
-       res.render("messages/messageboard", {messages:messages});
+       res.render("messages/messageboard", {messages:messages.reverse()});
      });
     } else{
     res.render("messages/messageboard");
@@ -26,6 +26,12 @@ router.get('/messages', function (req, res, next) {
 router.post('/messages/:id/delete', function (req, res, next) {
   db.Message.remove({_id:req.params.id}).then(function (message) {
     res.redirect("/messages");
+  });
+});
+
+router.get('/messages/:id/delete', function (req, res, next) {
+  db.Message.remove({_id:req.params.id}).then(function (message) {
+    res.redirect("/profile");
   });
 });
 
@@ -79,5 +85,7 @@ router.post('/messages', function (req, res, next) {
 
  });
 });
+
+
 
 module.exports = router;

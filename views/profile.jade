@@ -2,12 +2,29 @@ extends layout
 block content
 
   h1 Your Profile
+  div
+    a(href='/profile/' + userId + '/delete') Delete Profile
   if jobs
     each job in jobs    
       a(href='/job/'+ job._id + '/edit')= job.jobTitle
       p= job.location
       p= job.description
       div
-        a(href='/job/' + job._id + '/delete') Delete Post
-  div
-    a(href='/profile/' + userId + '/delete') Delete Profile
+        a(href='/job/' + job._id + '/delete') Delete Job Post
+  if posts
+    h1 Your Messages
+    each post in posts
+      div.post
+        a(href='/messages/'+post._id+"/delete") Delete Message
+        p
+        Strong Subject: 
+        = post.subject
+        p
+        Strong Body: 
+        = post.body
+        p
+        Strong Date Posted: 
+        = post.datePosted
+        p
+        Strong Number of Likes: 
+        = post.likedByUsers.length
