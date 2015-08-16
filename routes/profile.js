@@ -5,6 +5,15 @@ var bcrypt = require('bcrypt');
 var db = require('../models');
 var databaseQueries = require('../lib/database.js')
 
+router.use(function (req, res, next) {
+  if(req.session.userId) {
+    next();
+  }
+  else {
+    res.redirect('/');
+  }
+})
+
 router.get('/profile', function (req, res, next) {
   var userCookie = req.session.userId;
   databaseQueries.populateProfile(userCookie)

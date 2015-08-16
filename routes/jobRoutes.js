@@ -5,6 +5,15 @@ var db = require('../models');
 
 var databaseQueries = require('../lib/database.js');
 
+router.use(function (req,res, next) {
+  if(req.session.userId){
+    next()
+  } else {
+    res.redirect('/jobs')
+  }
+})
+
+
 router.get('/newjob', function (req, res, next) {
   res.render('job/newjob');
 });
