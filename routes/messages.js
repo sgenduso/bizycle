@@ -19,7 +19,7 @@ router.post('/messages/:id/delete', function (req, res, next) {
   });
 });
 
-router.get('/messages/liked/:id', function (req, res, next) {
+router.get('/messages/togglelike/:id', function (req, res, next) {
   db.Message.findOne({_id: req.params.id}).then(function (message) {
     var userInLikedArray;
     if (message.likedByUsers.indexOf(req.session.userId) >0 -1) {
@@ -36,6 +36,18 @@ router.get('/messages/liked/:id', function (req, res, next) {
       });
     }
 });
+});
+
+router.get('/messages/liked/:id', function (req, res, next) {
+  db.Message.findOne({_id: req.params.id}).then(function (message) {
+    var userInLikedArray;
+    if (message.likedByUsers.indexOf(req.session.userId) > -1) {
+        userInLikedArray = false;
+    } else {
+        userInLikedArray = true;
+    }
+     res.json(userInLikedArray);
+ });
 });
 
 router.post('/messages', function (req, res, next) {

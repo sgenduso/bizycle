@@ -13,16 +13,34 @@ if (closeModal) {
   });
 }
 
+
 function checkForLikes(thumb) {
   var messageXhr = new XMLHttpRequest();
   messageXhr.open('GET', '/messages/liked/'+thumb.id, false);
   messageXhr.send(null);
   var xhrResponse = messageXhr.response;
-  console.log(xhrResponse);
+  // alert(xhrResponse);
+  if(xhrResponse === "true"){
+    thumb.classList.add('fa-thumbs-o-up');
+    thumb.classList.remove('fa-thumbs-up');
+ }else{
+   thumb.classList.add('fa-thumbs-up');
+   thumb.classList.remove('fa-thumbs-o-up');
+  }
+ }
+
+
+function toggleLikes(thumb) {
+  var messageXhr = new XMLHttpRequest();
+  messageXhr.open('GET', '/messages/togglelike/'+thumb.id, false);
+  messageXhr.send(null);
+  var xhrResponse = messageXhr.response;
   if (xhrResponse === 'true') {
-    thumb.className = 'fa fa-thumbs-up fa-2x';
+    thumb.classList.add('fa-thumbs-up');
+    thumb.classList.remove('fa-thumbs-o-up');
   } else {
-    thumb.className = 'fa fa-thumbs-o-up fa-2x';
+    thumb.classList.add('fa-thumbs-o-up');
+    thumb.classList.remove('fa-thumbs-up');
   }
 }
 
@@ -33,7 +51,9 @@ window.onload = function () {
 };
 
 [].forEach.call(thumbsUp, function (thumb) {
-  thumb.addEventListener('click', checkForLikes(thumb));
+  thumb.addEventListener('click', function () {
+  toggleLikes(thumb);
+});
 });
 
 
