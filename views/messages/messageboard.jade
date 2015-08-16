@@ -6,11 +6,12 @@ block content
   if(messages)
     for item in messages
      div.message
-      form(action="/messages/"+item._id+"/delete" method="post")
-       input.delete(type='submit' value ="X")
+      if(item.userId === userId)
+        form(action="/messages/"+item._id+"/delete" method="post")
+         input.delete(type='submit' value ="Delete Message")
       p
       Strong Subject: 
-      =item.subject 
+      =item.subject
       p=item.body
       p=item.dateNew
       p
