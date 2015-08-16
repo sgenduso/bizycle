@@ -4,7 +4,6 @@ var validate = require('../lib/validate.js');
 var db = require('../models');
 var databaseQueries = require('../lib/database.js');
 
-
 router.get('/messages', function (req, res, next) {
   db.Message.find().then(function (messages) {
    messages.forEach(function (message) {
