@@ -1,8 +1,15 @@
 extends layout
-
 block content
+
+  header 
+    if !userId
+      p(class="not-logged-in" id='') Sign In
+      include ./partials/authModal.jade
+    else
+      p= userFirstName
   h1= title
   div
     a(href='/jobs') Job Board
   div
     a(href='/profile') Your Profile
+  script(src='javascripts/test.js')

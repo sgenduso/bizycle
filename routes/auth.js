@@ -17,35 +17,38 @@ router.get('/jobs', function(req, res, next) {
 
 router.post('/signup', function (req, res, next) {
   var user = req.body;
+  console.log(req.body.path);
+  var path = req.body.path;
+  console.log(path,"PATH");
     databaseQueries.signUp(user).then(function (newUser) {
       if(newUser){
         req.session.userId = newUser._id;
         req.session.userFirstName = newUser.firstName;
-        res.redirect('/newjob');
+        res.redirect('/' + path);
       }
      else {
-      res.render('jobs', { title: 'JOB BOARD', error: 'This email is already associated with an account.'});
+      res.render(path, { title: 'JOB BOARD', error: 'This email is already associated with an account.'});
     }
   });
 });
 
 router.post('/login', function (req, res, next) {
-  console.log("check this");
   var user = req.body;
+  var path = req.body.path
   db.User.findOne({email: user.login_email})
   .then(function (foundUser) {
     if(foundUser) {
       if(bcrypt.compareSync(user.login_password, foundUser.password)) {
         req.session.userId = foundUser._id;
         req.session.userFirstName = foundUser.firstName;
-        res.redirect('/newjob')
+        res.redirect('/' + path)
       }
       else {
-        res.render('jobs', { title: 'JOB BOARD', error: 'Incorrect password.'});
+        res.render(path, { title: 'JOB BOARD', error: 'Incorrect password.'});
       }
     }
     else {
-      res.render('jobs', { title: 'JOB BOARD', error: 'User not found.'});
+      res.render(path, { title: 'JOB BOARD', error: 'User not found.'});
     }
   })
 })

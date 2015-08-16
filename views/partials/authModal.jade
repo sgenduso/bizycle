@@ -8,7 +8,7 @@ dialog(id="login-modal")
       div
         label(for='login-email') Email
         input(type='email' id='login-email' name='login_email' required)
-      div
+      div.append
         label(for='login-password') Password
         input(type='password' id='login-password' name='login_password' required)
       div
@@ -18,7 +18,7 @@ dialog(id="login-modal")
       div
         label(for='signup-first-name') First Name
         input(type='text' id='signup-first-name' name='signup_first_name' required)
-      div
+      div.append
         label(for='signup-last-name') Last Name
         input(type='text' id='signup-last-name' name='signup_last_name' required)
       div
@@ -32,5 +32,3 @@ dialog(id="login-modal")
         input(type='password' id='signup-confirm-password' name='signup_confirm_password' required)
       div
         input#submit-signup(type='submit' value='Sign Up')
-
-script(src='javascripts/test.js')

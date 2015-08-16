@@ -1,6 +1,9 @@
 extends layout
 
 block content
+  header
+    p(class="not-logged-in" id='jobs') Sign In
+    include ./partials/authModal.jade
   h1= title
   div.add-job
     if loggedIn
@@ -21,5 +24,21 @@ block content
               p= job.source
     else
       div
-        p(id="not-logged-in") Post a job to the board
+        p= userID
+        p(class="not-logged-in" id='newjob') Post a job to the board
         include ./partials/authModal.jade
+        if jobs 
+          each job in jobs
+            .newJob
+              .left
+                a(href=job.source)
+                  h1= job.jobTitle
+                p= job.companyName
+              .right
+                p= job.location
+                p Date Posted
+                  = job.activation
+              .bottom
+                p= job.description
+                p= job.source
+  script(src='javascripts/test.js')
