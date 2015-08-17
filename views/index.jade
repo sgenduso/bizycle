@@ -1,23 +1,26 @@
 extends layout
 block content
 
-  header 
-    if !userId
-      p(class="not-logged-in" id='index') Sign In
-      include ./partials/authModal.jade
-    else
-      p Hi, 
-        =userFirstName
-  h1= title
-  div
-    a(href='/jobs/alljobs') Job Board
-  div
-    if userId
-      a(href='/profile') Your Profile
-    else
-      div
-        p(class="not-logged-in" id='profile') Your Profile
-        include ./partials/authModal.jade
-  div
-    a(href='/messages') Message Board
+  div.layer
+    div.navigation
+      header 
+        if !userId
+          p(class="not-logged-in" id='index') Sign In
+          include ./partials/authModal.jade
+        else
+          p.welcome Welcome Back,  
+            =userFirstName + '!'
+    div.links
+      div.homepage-link
+        a(href='/jobs/alljobs') Job Board
+      div.homepage-link
+        a(href='/messages') Message Board
+      div.homepage-link
+        if userId
+          a(href='/profile') My Profile
+        else
+          div
+            p(class="not-logged-in" id='profile') Your Profile
+            include ./partials/authModal.jade
+    div.background
   script(src='javascripts/login.js')
