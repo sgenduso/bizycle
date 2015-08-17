@@ -14,14 +14,14 @@ router.use('/newjob', function (req,res, next) {
 })
 
 router.get('/newjob', function (req, res, next) {
-  res.render('job/newjob');
+  res.render('jobs/newjob');
 });
 
 router.post('/newjob', function (req, res, next) {
   var errorCheck = validate.validate(req.body.title, req.body.company, req.body.location, req.body.description, req.body.expiry);
   var userId = req.session.userId;
   if(errorCheck.length > 0){
-    res.render('newjob', {errors: errorCheck});
+    res.render('jobs/newjob', {errors: errorCheck});
   } else {
     console.log(req.body, "JOB OBJECT BEFORE QUERY");
     // req.body.activate = timestampToDate(req.body.activate);

@@ -15,9 +15,29 @@ router.get('/jobs/alljobs', function(req, res, next) {
   })
 });
 
-router.post('/findme', function (req, res, next) {
-  console.log(req.body);
-  res.send('got the message');
+router.post('/signup', function (req, res, next) {
+  var user = req.body;
+  var path = req.body.path;
+  databaseQueries.signUp(user)
+  .then(function (addedUser) {
+    if(addedUser) {
+      req.session.userId = addedUser._id;
+      req.session.userFirstName = addedUser.firstName;
+      console.log("cookies created");
+      console.log(path, "path");
+      if(path === 'index') {
+        res.json("");
+      }
+      else {
+        res.json(path);
+      }
+    }
+    else {
+      console.log(addedUser);
+      res.json({error: 'This email is already associated with an account'});
+    }
+
+  })
 })
 
 // router.post('/signup', function (req, res, next) {
@@ -50,30 +70,60 @@ router.post('/findme', function (req, res, next) {
   //   }
   // });
 // });
-
 router.post('/login', function (req, res, next) {
-  var user = req.body;
-  var path = req.body.path
+  var user= req.body;
+  var path = req.body.path;
   databaseQueries.findUser(user)
   .then(function (foundUser) {
     if(foundUser) {
+      console.log("finds user");
       if(bcrypt.compareSync(user.login_password, foundUser.password)) {
         req.session.userId = foundUser._id;
         req.session.userFirstName = foundUser.firstName;
-        console.log(path, 'WENT TO REDIRECT');
-        res.redirect('/' + path)
+        if(path === 'index') {
+          console.log('REDIRECT TO INDEX');
+          res.json("");
+        }
+        else {
+          console.log("PATH");
+          res.json(path);
+        }
       }
       else {
-        console.log(path, "PASSWORD DONt MATCH");
-        res.render(path, { title: 'JOB BOARD', error: 'Incorrect password.'});
+        console.log("PASS DOES NOT MATCH");
+        res.json({error: 'Passwords do not match'});
       }
     }
     else {
-      console.log(path, 'USER NOT FOUND');
-      res.render(path, { title: 'back again', error: 'User not found.'});
+      console.log("NO USER");
+      res.json({error: 'User not found'})
     }
   })
 })
+
+// router.post('/login', function (req, res, next) {
+//   var user = req.body;
+//   var path = req.body.path
+//   databaseQueries.findUser(user)
+//   .then(function (foundUser) {
+//     if(foundUser) {
+//       if(bcrypt.compareSync(user.login_password, foundUser.password)) {
+//         req.session.userId = foundUser._id;
+//         req.session.userFirstName = foundUser.firstName;
+//         console.log(path, 'WENT TO REDIRECT');
+//         res.redirect('/' + path)
+//       }
+//       else {
+//         console.log(path, "PASSWORD DONt MATCH");
+//         res.render(path, { title: 'JOB BOARD', error: 'Incorrect password.'});
+//       }
+//     }
+//     else {
+//       console.log(path, 'USER NOT FOUND');
+//       res.render(path, { title: 'back again', error: 'User not found.'});
+//     }
+//   })
+// })
 
 
 

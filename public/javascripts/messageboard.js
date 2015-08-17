@@ -1,3 +1,4 @@
+console.log("gets here");
 var postButton = document.getElementById('post-msg');
 var msgModal = document.getElementById('new-msg-modal');
 var closeModal = document.getElementById('close-msg-modal');
