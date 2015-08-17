@@ -6,21 +6,26 @@
 html {
   width: 100%;
   height: 100%;
+  background-color: rgba($lightGrey, 1);
 }
 
 body {
   font-family: $AbelFont;
-  background-color: rgba($white, 1);
-  background-image: url('../images/CoBBB-logo.png');
+
   opacity: 50%;
-  background-size: 80% auto;
-  width: 100%;
-  height: 100%;
+
 }
 
 .layer {
-  background-color: rgba(255, 255, 255, .95);
+  // background-color: rgba(255, 255, 255, .90);
   width: 100%;
   height: 100%;
   position: absolute;
+}
+
+.background {
+background-image: url('../images/CoBBB-logo.png');
+background-size: 55% auto;
+width: 100%;
+height: 65%;
 }

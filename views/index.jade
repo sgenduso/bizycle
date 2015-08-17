@@ -14,12 +14,13 @@ block content
       div.homepage-link
         a(href='/jobs/alljobs') Job Board
       div.homepage-link
+        a(href='/messages') Message Board
+      div.homepage-link
         if userId
-          a(href='/profile') Your Profile
+          a(href='/profile') My Profile
         else
           div
             p(class="not-logged-in" id='profile') Your Profile
             include ./partials/authModal.jade
-      div.homepage-link
-        a(href='/messages') Message Board
+    div.background
   script(src='javascripts/login.js')

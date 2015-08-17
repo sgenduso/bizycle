@@ -80,7 +80,8 @@ table {
 
 .links {
   display: inline-block;
-  margin-top: 20%; }
+  margin-top: 5%;
+  margin-bottom: 2%; }
 
 .homepage-link {
   display: inline-block;
@@ -92,7 +93,9 @@ table {
   background-color: #7ECCE9;
   color: #4A4B4E; }
   .homepage-link:hover {
-    background-color: #FBE975; }
+    background-color: #B5C496;
+    position: relative;
+    top: -5px; }
   .homepage-link a {
     text-decoration: none;
     font-size: 2em; }
@@ -116,19 +119,20 @@ table {
 
 html {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  background-color: #f8f7f7; }
 
 body {
   font-family: "Abel";
-  background-color: #f7f6f6;
-  background-image: url("../images/CoBBB-logo.png");
-  opacity: 50%;
-  background-size: 80% auto;
-  width: 100%;
-  height: 100%; }
+  opacity: 50%; }
 
 .layer {
-  background-color: rgba(255, 255, 255, 0.95);
   width: 100%;
   height: 100%;
   position: absolute; }
+
+.background {
+  background-image: url("../images/CoBBB-logo.png");
+  background-size: 55% auto;
+  width: 100%;
+  height: 65%; }
