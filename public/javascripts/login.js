@@ -1,5 +1,5 @@
+console.log("reaches this script");
 var notLoggedInElements = document.getElementsByClassName('not-logged-in');
-
 var loginModal      = document.getElementById('login-modal');
 var closeModal      = document.getElementById('close-modal');
 var submitLogin     = document.getElementById('submit-login');
@@ -39,15 +39,12 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
       xhr.setRequestHeader('Content-type', "application/json");
       sentObjectString = JSON.stringify(sentObject);
       xhr.send(sentObjectString);
-      console.log(xhr.response);
-      console.log(typeof xhr.response, "TYPE");
       var redirectPath = JSON.parse(xhr.response);
-      if(xhr.response === "") {
+      if(redirectPath.length === 0) {
         window.location.replace('http://localhost:3000/');
       }
       else {
         var redirectPath = "http://localhost:3000/" + redirectPath;
-        console.log(typeof redirectPath, "redirect path");
         window.location.replace(redirectPath);
       }
     })
@@ -57,19 +54,27 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
       var xhr = new XMLHttpRequest();
       var sentObject =
       {
-        email: loginEmail.value,
-        password: loginPassword.value,
+        login_email: loginEmail.value,
+        login_password: loginPassword.value,
         path: that.id
       };
-      xhr.open('post', "/findme", false);
+      xhr.open('post', "/login", false);
       xhr.setRequestHeader('Content-type', "application/json");
       sentObjectString = JSON.stringify(sentObject);
       xhr.send(sentObjectString);
       console.log(xhr.response);
+      var redirectPath = JSON.parse(xhr.response);
+      if(redirectPath.length === 0) {
+        window.location.replace('http://localhost:3000/');
+      }
+      else {
+        var redirectPath = "http://localhost:3000/" + redirectPath;
+        window.location.replace(redirectPath);
+      }
     })
   })
-closeModal.addEventListener('click', function () {
-  loginModal.close();
-  console.log('HITS event listener');
-})
 }
+// closeModal.addEventListener('click', function () {
+//   loginModal.close();
+//   console.log('HITS event listener');
+// })

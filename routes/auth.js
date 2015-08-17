@@ -26,7 +26,7 @@ router.post('/signup', function (req, res, next) {
       console.log("cookies created");
       console.log(path, "path");
       if(path === 'index') {
-        res.json();
+        res.json("");
       }
       else {
         res.json(path);
@@ -70,30 +70,56 @@ router.post('/signup', function (req, res, next) {
   //   }
   // });
 // });
-
 router.post('/login', function (req, res, next) {
-  var user = req.body;
-  var path = req.body.path
+  var user= req.body;
+  var path = req.body.path;
   databaseQueries.findUser(user)
   .then(function (foundUser) {
     if(foundUser) {
+      console.log("finds user");
       if(bcrypt.compareSync(user.login_password, foundUser.password)) {
         req.session.userId = foundUser._id;
         req.session.userFirstName = foundUser.firstName;
-        console.log(path, 'WENT TO REDIRECT');
-        res.redirect('/' + path)
+        if(path === 'index') {
+          res.json("");
+        }
+        else {
+          res.json(path);
+        }
       }
       else {
-        console.log(path, "PASSWORD DONt MATCH");
-        res.render(path, { title: 'JOB BOARD', error: 'Incorrect password.'});
+        res.json('passwords do not match');
       }
     }
     else {
-      console.log(path, 'USER NOT FOUND');
-      res.render(path, { title: 'back again', error: 'User not found.'});
+      res.json('User not found')
     }
   })
 })
+
+// router.post('/login', function (req, res, next) {
+//   var user = req.body;
+//   var path = req.body.path
+//   databaseQueries.findUser(user)
+//   .then(function (foundUser) {
+//     if(foundUser) {
+//       if(bcrypt.compareSync(user.login_password, foundUser.password)) {
+//         req.session.userId = foundUser._id;
+//         req.session.userFirstName = foundUser.firstName;
+//         console.log(path, 'WENT TO REDIRECT');
+//         res.redirect('/' + path)
+//       }
+//       else {
+//         console.log(path, "PASSWORD DONt MATCH");
+//         res.render(path, { title: 'JOB BOARD', error: 'Incorrect password.'});
+//       }
+//     }
+//     else {
+//       console.log(path, 'USER NOT FOUND');
+//       res.render(path, { title: 'back again', error: 'User not found.'});
+//     }
+//   })
+// })
 
 
 
