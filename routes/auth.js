@@ -76,7 +76,7 @@ router.post('/login', function (req, res, next) {
   databaseQueries.findUser(user)
   .then(function (foundUser) {
     if(foundUser) {
-      console.log("finds user");
+      console.log(foundUser, "finds user");
       if(bcrypt.compareSync(user.login_password, foundUser.password)) {
         req.session.userId = foundUser._id;
         req.session.userFirstName = foundUser.firstName;
