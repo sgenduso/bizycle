@@ -15,9 +15,29 @@ router.get('/jobs/alljobs', function(req, res, next) {
   })
 });
 
-router.post('/findme', function (req, res, next) {
-  console.log(req.body);
-  res.send('got the message');
+router.post('/signup', function (req, res, next) {
+  var user = req.body;
+  var path = req.body.path;
+  databaseQueries.signUp(user)
+  .then(function (addedUser) {
+    if(addedUser) {
+      req.session.userId = addedUser._id;
+      req.session.userFirstName = addedUser.firstName;
+      console.log("cookies created");
+      console.log(path, "path");
+      if(path === 'index') {
+        res.json();
+      }
+      else {
+        res.json(path);
+      }
+    }
+    else {
+      console.log(addedUser);
+      res.json('errors');
+    }
+
+  })
 })
 
 // router.post('/signup', function (req, res, next) {
