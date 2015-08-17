@@ -15,7 +15,7 @@ var confirmPassword = document.getElementById('signup-confirm-password')
 
 var loginEmail      = document.getElementById('login-email');
 var loginPassword   = document.getElementById('login-password');
-var errors           = document.getElementById('errors')
+var errors          = document.getElementById('errors')
 
 
 function validateSignUp(firstName, lastName, email, password, confirmPassword) {
@@ -117,8 +117,8 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
       errors.innerHTML = '';
         var formErrors = validateLogin(loginEmail.value, loginPassword.value);
 
-        console.log(formErrors, "ALL ERRORS");
         if(formErrors.length > 0)  {
+          console.log("IN FORM ERRORS");
           formErrors.forEach(function (error) {
             var newError = document.createElement('p')
             newError.innerHTML= error;
@@ -127,7 +127,7 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
         }
 
         else {
-
+          console.log("START XML");
           var xhr = new XMLHttpRequest();
           var sentObject =
           {
@@ -143,7 +143,7 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
           console.log(xhr.response);
           var redirectPath = JSON.parse(xhr.response);
           console.log(typeof redirectPath, "TYPE");
-          if(Object.keys(redirectPath)){
+          if(Object.keys(redirectPath).indexOf('error') != -1){
             var newError = document.createElement('p')
             newError.innerHTML= redirectPath.error;
             errors.appendChild(newError);
