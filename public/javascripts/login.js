@@ -72,7 +72,6 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
 
       var formErrors = validateSignUp(firstName.value, lastName.value, email.value, password.value, confirmPassword.value);
 
-      console.log(formErrors, "ALL ERRORS");
       if(formErrors.length > 0)  {
         formErrors.forEach(function (error) {
           var newError = document.createElement('p')
@@ -95,7 +94,9 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
         xhr.send(sentObjectString);
 
         var redirectPath = JSON.parse(xhr.response);
-        if(Object.keys(redirectPath)){
+        console.log(redirectPath, "PATH");
+        if(Object.keys(redirectPath).indexOf('error') != -1){
+
           var newError = document.createElement('p')
           newError.innerHTML= redirectPath.error;
           errors.appendChild(newError);
@@ -161,8 +162,9 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
     })
   }
 
-
-// closeModal.addEventListener('click', function () {
-//   loginModal.close();
-//   console.log('HITS event listener');
-// })
+if(notLoggedInElements) {
+  closeModal.addEventListener('click', function () {
+    loginModal.close();
+    console.log('HITS event listener');
+  })
+}
