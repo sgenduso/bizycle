@@ -115,6 +115,7 @@ table {
   }
 
   a {
+		color: $darkGrey;
     text-decoration: none;
     font-size: 2em;
     &:visited {
@@ -135,5 +136,20 @@ table {
     font-weight: bold;
     font-size: 1.5em;
   }
+
+	.logged:hover{
+		cursor: pointer;
+		color: $darkGrey;
+	}
+
+	a .logged{
+		text-decoration: none;
+		color: $darkGrey;
+		&:visited{
+			color: $darkGrey;
+		}
+	}
+
+
 
 }

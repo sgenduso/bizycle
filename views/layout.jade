@@ -5,4 +5,15 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
   body
-    block content
+    div.layer
+      div.navigation
+        header 
+          if !userId
+            p.welcome.logged(class="not-logged-in" id='index') Sign In
+            include ./partials/authModal.jade
+          else
+            p.welcome Welcome,  
+              =userFirstName + '!'
+            a.logged(href="/users/logout") Logout
+      block content
+    script(src='javascripts/login.js')

@@ -97,6 +97,7 @@ table {
     position: relative;
     top: -5px; }
   .homepage-link a {
+    color: #4A4B4E;
     text-decoration: none;
     font-size: 2em; }
     .homepage-link a:visited {
@@ -112,6 +113,14 @@ table {
     margin-top: 5px;
     font-weight: bold;
     font-size: 1.5em; }
+  .navigation .logged:hover {
+    cursor: pointer;
+    color: #4A4B4E; }
+  .navigation a .logged {
+    text-decoration: none;
+    color: #4A4B4E; }
+    .navigation a .logged:visited {
+      color: #4A4B4E; }
 
 #not-logged-in {
   display: inline-block;

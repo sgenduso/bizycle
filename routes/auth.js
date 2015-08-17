@@ -3,7 +3,7 @@ var router = express.Router();
 var bcrypt = require('bcrypt');
 
 var db = require('../models');
-var databaseQueries = require('../lib/database.js')
+var databaseQueries = require('../lib/database.js');
 
 router.get('/jobs/alljobs', function(req, res, next) {
   var userCookie = req.session.userId;
@@ -12,7 +12,7 @@ router.get('/jobs/alljobs', function(req, res, next) {
     allJobs = returnedVals[0];
     loggedIn = returnedVals[1];
     res.render('jobs/alljobs', { jobs: allJobs, title: 'JOB BOARD', loggedIn: loggedIn});
-  })
+  });
 });
 
 router.post('/signup', function (req, res, next) {
@@ -37,8 +37,8 @@ router.post('/signup', function (req, res, next) {
       res.json({error: 'This email is already associated with an account'});
     }
 
-  })
-})
+  });
+});
 
 // router.post('/signup', function (req, res, next) {
 //     if(req.body != "final twilio test") {
@@ -96,10 +96,15 @@ router.post('/login', function (req, res, next) {
     }
     else {
       console.log("NO USER");
-      res.json({error: 'User not found'})
+      res.json({error: 'User not found'});
     }
-  })
-})
+  });
+});
+
+router.get("/users/logout", function (req, res, next) {
+  req.session = null;
+  res.redirect("/");
+});
 
 // router.post('/login', function (req, res, next) {
 //   var user = req.body;
