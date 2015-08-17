@@ -54,27 +54,6 @@ table {
   text-align: right;
 }
 
-#login-modal {
-  width: 50%;
-}
-
-.login-signup {
-  display: inline-block;
-  width: 50%;
-  float: left;
-  div {
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-  label {
-    display: inline-block;
-    width: 200px;
-  }
-  input {
-    display: inline-block;
-    // margin-left: 200px;
-  }
-}
 
 .message{
   border: 1px solid black;
@@ -87,7 +66,7 @@ table {
  float: right;
 }
 
-.layer{
+#layer{
   text-align: center;
 }
 
@@ -135,6 +114,7 @@ table {
     margin-top: 5px;
     font-weight: bold;
     font-size: 1.5em;
+		color: $darkGrey;
   }
 
 	.logged:hover{
@@ -142,7 +122,7 @@ table {
 		color: $darkGrey;
 	}
 
-	a .logged{
+	.logged{
 		text-decoration: none;
 		color: $darkGrey;
 		&:visited{

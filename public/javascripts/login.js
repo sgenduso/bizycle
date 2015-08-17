@@ -7,15 +7,17 @@ var submitSignup    = document.getElementById('submit-signup');
 var errors          = document.getElementById('errors');
 var appendDivs      = document.getElementsByClassName('append');
 
-var firstName       = document.getElementById('signup-first-name')
-var lastName        = document.getElementById('signup-last-name')
-var email           = document.getElementById('signup-email')
-var password        = document.getElementById('signup-password')
-var confirmPassword = document.getElementById('signup-confirm-password')
+var firstName       = document.getElementById('signup-first-name');
+var lastName        = document.getElementById('signup-last-name');
+var email           = document.getElementById('signup-email');
+var password        = document.getElementById('signup-password');
+var confirmPassword = document.getElementById('signup-confirm-password');
 
 var loginEmail      = document.getElementById('login-email');
 var loginPassword   = document.getElementById('login-password');
-var errors          = document.getElementById('errors')
+var errors          = document.getElementById('errors');
+
+var background      = document.getElementById('layer');
 
 
 function validateSignUp(firstName, lastName, email, password, confirmPassword) {
@@ -65,6 +67,8 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
   that = this;
 
     loginModal.showModal();
+    .style.backgroundColor = 'black';
+
 
 
     submitSignup.addEventListener('click', function () {

@@ -10,7 +10,7 @@ router.get('/messages', function (req, res, next) {
     var msgPromises = messages.map(function (message, i) {
       return databaseQueries.findUserById(message.userId).then(function (user) {
         messages[i].dateNew = databaseQueries.dateParse(messages[i].datePosted);
-        messages[i].postedBy = user.firstName+" "+user.lastName.substring(0,0)+".";
+        messages[i].postedBy = user.firstName+" "+user.lastName.substring(0,1)+".";
       });
     });
     Promise.all(msgPromises).then(function () {

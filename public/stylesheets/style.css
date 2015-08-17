@@ -50,22 +50,6 @@ table {
 #close-modal {
   text-align: right; }
 
-#login-modal {
-  width: 50%; }
-
-.login-signup {
-  display: inline-block;
-  width: 50%;
-  float: left; }
-  .login-signup div {
-    margin-bottom: 5px;
-    margin-top: 5px; }
-  .login-signup label {
-    display: inline-block;
-    width: 200px; }
-  .login-signup input {
-    display: inline-block; }
-
 .message {
   border: 1px solid black;
   display: inline-block;
@@ -75,7 +59,7 @@ table {
 .delete {
   float: right; }
 
-.layer {
+#layer {
   text-align: center; }
 
 .links {
@@ -112,14 +96,15 @@ table {
     padding: 10px;
     margin-top: 5px;
     font-weight: bold;
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    color: #4A4B4E; }
   .navigation .logged:hover {
     cursor: pointer;
     color: #4A4B4E; }
-  .navigation a .logged {
+  .navigation .logged {
     text-decoration: none;
     color: #4A4B4E; }
-    .navigation a .logged:visited {
+    .navigation .logged:visited {
       color: #4A4B4E; }
 
 #not-logged-in {
@@ -135,7 +120,8 @@ body {
   font-family: "Abel";
   opacity: 50%; }
 
-.layer {
+#layer {
+  background-color: rgba(0, 0, 0, 0.9);
   width: 100%;
   height: 100%;
   position: absolute; }
@@ -145,3 +131,57 @@ body {
   background-size: 55% auto;
   width: 100%;
   height: 65%; }
+
+#login-modal {
+  width: 50%;
+  border: solid #4A4B4E 5px;
+  box-shadow: 0 0 5px 2px #b5c496; }
+
+.login-signup {
+  display: inline-block;
+  width: 50%;
+  float: left; }
+  .login-signup div {
+    margin-bottom: 5px;
+    margin-top: 5px; }
+  .login-signup label {
+    display: inline-block;
+    width: 200px; }
+  .login-signup input {
+    display: inline-block; }
+
+.deletemodal {
+  height: 40px; }
+
+input[type="text"], input[type="password"], input[type="email"] {
+  width: 150px;
+  height: 25px; }
+
+input {
+  font-family: "Abel";
+  font-style: italic; }
+
+input[type="button"] {
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #F7F6F6;
+  font-style: normal;
+  border: 2px solid #4A4B4E;
+  border-radius: 5px;
+  color: #4A4B4E; }
+  input[type="button"]:hover {
+    background-color: #7ECCE9; }
+
+#close-modal {
+  float: right;
+  border: 2px solid #F7F6F6;
+  background-color: #DF2425;
+  color: #F7F6F6; }
+  #close-modal:hover {
+    border: 2px solid #DF2425;
+    background-color: #F7F6F6;
+    color: #DF2425; }
+
+.login {
+  border-right: solid #4A4B4E 2px;
+  box-sizing: border-box; }
