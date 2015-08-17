@@ -34,7 +34,7 @@ router.post('/signup', function (req, res, next) {
     }
     else {
       console.log(addedUser);
-      res.json('errors');
+      res.json({error: 'This email is already associated with an account'});
     }
 
   })
@@ -81,18 +81,22 @@ router.post('/login', function (req, res, next) {
         req.session.userId = foundUser._id;
         req.session.userFirstName = foundUser.firstName;
         if(path === 'index') {
+          console.log('REDIRECT TO INDEX');
           res.json("");
         }
         else {
+          console.log("PATH");
           res.json(path);
         }
       }
       else {
-        res.json('passwords do not match');
+        console.log("PASS DOES NOT MATCH");
+        res.json({error: 'Passwords do not match'});
       }
     }
     else {
-      res.json('User not found')
+      console.log("NO USER");
+      res.json({error: 'User not found'})
     }
   })
 })

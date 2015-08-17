@@ -1,8 +1,7 @@
 dialog(id="login-modal")
   div
     input#close-modal(type='button' value='X')
-  if error
-    div#errors.errors=error
+  div#errors
   div.login-signup Log In
     form#login(action='/login' method='post')
       div
