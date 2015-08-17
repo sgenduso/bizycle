@@ -9,7 +9,7 @@ router.get('/jobs/alljobs', function(req, res, next) {
   var userCookie = req.session.userId;
   databaseQueries.findJobs(userCookie)
   .then(function (returnedVals) {
-    allJobs = returnedVals[0];
+    allJobs = returnedVals[0].reverse();
     loggedIn = returnedVals[1];
     res.render('jobs/alljobs', { jobs: allJobs, title: 'JOB BOARD', loggedIn: loggedIn});
   });

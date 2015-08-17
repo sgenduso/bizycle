@@ -2,8 +2,8 @@
 #login-modal {
   width: 50%;
   border: solid $darkGrey 5px;
-  box-shadow: 0 0 5px 2px rgba($green, 1);
-}
+  box-shadow: 0 0 5px 2px rgba($yellow, 1);
+
 
 .login-signup {
   display: inline-block;
@@ -35,6 +35,7 @@ input[type="text"], input[type="password"], input[type="email"]{
 input{
   font-family: $AbelFont;
   font-style: italic;
+  font-size: 1.1em;
 }
 
 input[type="button"]{
@@ -73,4 +74,5 @@ input[type="button"]{
 
 .signup{
   // float: left;
+}
 }
