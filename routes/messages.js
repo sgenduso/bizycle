@@ -7,7 +7,6 @@ var databaseQueries = require('../lib/database.js');
 router.get('/messages', function (req, res, next) {
 databaseQueries.populateMessageboard()
 .then(function (messages) {
-    console.log(messages);
    res.render("messages/messageboard", {messages:messages});
  });
 });
