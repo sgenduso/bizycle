@@ -5,15 +5,10 @@ var db = require('../models');
 var databaseQueries = require('../lib/database.js');
 
 router.get('/messages', function (req, res, next) {
-  databaseQueries.findAllMessages().then(function (messages) {
-  if (messages.length>0){
-    databaseQueries.findMessagePosters(messages)
-    .then(function () {
-       res.render("messages/messageboard", {messages:messages.reverse()});
-     });
-    } else{
-    res.render("messages/messageboard");
-  }
+databaseQueries.populateMessageboard()
+.then(function (messages) {
+    console.log(messages);
+   res.render("messages/messageboard", {messages:messages});
  });
 });
 
