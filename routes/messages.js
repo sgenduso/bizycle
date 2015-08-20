@@ -32,18 +32,8 @@ router.get('/messages/togglelike/:id', function (req, res, next) {
 });
 
 router.get('/messages/liked/:id', function (req, res, next) {
-  var objectToSend= {};
-  databaseQueries.findLiked(req.params.id).then(function (message) {
-    if (message.likedByUsers.indexOf(req.session.userId) > -1) {
-        objectToSend.userInLikedArray = true;
-        objectToSend.numOfLikes = message.likedByUsers.length;
-        res.json(objectToSend);
-    } else {
-        objectToSend.userInLikedArray = false;
-        objectToSend.numOfLikes = message.likedByUsers.length;
-        res.json(objectToSend);
-    }
-     res.json(objectToSend);
+  databaseQueries.checkForLikes(req.params.id, req.session.userId).then(function (objToSend) {
+     res.json(objToSend);
  });
 });
 
