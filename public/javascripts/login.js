@@ -1,4 +1,3 @@
-console.log("reaches this script");
 var notLoggedInElements = document.getElementsByClassName('not-logged-in');
 var loginModal      = document.getElementById('login-modal');
 var closeModal      = document.getElementById('close-modal');
@@ -17,48 +16,48 @@ var loginEmail      = document.getElementById('login-email');
 var loginPassword   = document.getElementById('login-password');
 var errors          = document.getElementById('errors');
 
-// var background      = document.getElementById('layer');
 
 
 function validateSignUp(firstName, lastName, email, password, confirmPassword) {
   var errorArray = [];
-  var firstEmpty = 'First name must be filled'
-  var lastEmpty = 'Last name must be filled'
-  var passError = 'Password must be eight characters long'
-  var match = 'Passwords must match'
-  var emailError = 'Enter a valid email.'
+  var firstEmpty = 'First name must be filled';
+  var lastEmpty = 'Last name must be filled';
+  var passError = 'Password must be eight characters long';
+  var match = 'Passwords must match';
+  var emailError = 'Enter a valid email.';
 
   if(firstName === ''){
-    errorArray.push(firstEmpty)
+    errorArray.push(firstEmpty);
   }
   if(lastName === ''){
-    errorArray.push(lastEmpty)
+    errorArray.push(lastEmpty);
   }
   if(password.length < 8){
-    errorArray.push(passError)
+    errorArray.push(passError);
   }
   if(email === '' || email.indexOf('@') === -1){
-    errorArray.push(emailError)
+    errorArray.push(emailError);
   }
   if(password != confirmPassword){
-    errorArray.push(match)
+    errorArray.push(match);
   }
 
-  return errorArray
+  return errorArray;
 }
+
 function validateLogin(email, password) {
   var errorArray = [];
-  var passError = 'Enter a password'
-  var emailError = 'Enter a valid email.'
+  var passError = 'Enter a password';;
+  var emailError = 'Enter a valid email.';
 
   if(password === ''){
-    errorArray.push(passError)
+    errorArray.push(passError);
   }
   if(email === '' || email.indexOf('@') === -1){
-    errorArray.push(emailError)
+    errorArray.push(emailError);
   }
 
-  return errorArray
+  return errorArray;
 }
 
 for (var i = 0; i < notLoggedInElements.length; i++) {
@@ -67,8 +66,6 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
   that = this;
 
     loginModal.showModal();
-    // .style.backgroundColor = 'black';
-
 
 
     submitSignup.addEventListener('click', function () {
@@ -78,10 +75,10 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
 
       if(formErrors.length > 0)  {
         formErrors.forEach(function (error) {
-          var newError = document.createElement('p')
+          var newError = document.createElement('p');
           newError.innerHTML= error;
           errors.appendChild(newError);
-        })
+        });
       } else {
         var xhr = new XMLHttpRequest();
         var sentObject =
@@ -101,7 +98,7 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
         console.log(redirectPath, "PATH");
         if(Object.keys(redirectPath).indexOf('error') != -1){
 
-          var newError = document.createElement('p')
+          var newError = document.createElement('p');
           newError.innerHTML= redirectPath.error;
           errors.appendChild(newError);
         } else {
@@ -114,7 +111,7 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
           }
         }
       }
-    })
+    });
 
       //
     submitLogin.addEventListener('click', function () {
@@ -124,10 +121,10 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
         if(formErrors.length > 0)  {
           console.log("IN FORM ERRORS");
           formErrors.forEach(function (error) {
-            var newError = document.createElement('p')
+            var newError = document.createElement('p');
             newError.innerHTML= error;
             errors.appendChild(newError);
-          })
+          });
         }
 
         else {
@@ -148,7 +145,7 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
           var redirectPath = JSON.parse(xhr.response);
           console.log(typeof redirectPath, "TYPE");
           if(Object.keys(redirectPath).indexOf('error') != -1){
-            var newError = document.createElement('p')
+            var newError = document.createElement('p');
             newError.innerHTML= redirectPath.error;
             errors.appendChild(newError);
           }
@@ -162,13 +159,13 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
             }
           }
         }
-      })
-    })
+      });
+    });
   }
 
 if(notLoggedInElements) {
   closeModal.addEventListener('click', function () {
     loginModal.close();
     console.log('HITS event listener');
-  })
+  });
 }
