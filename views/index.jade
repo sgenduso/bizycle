@@ -1,11 +1,13 @@
 extends layout
 block content
-  div.links
-    div.homepage-link
-      a(href='/jobs/alljobs') Job Board
-    div.homepage-link
-      a(href='/messages') Message Board
-    if userId
+    div.links
       div.homepage-link
-        a(href='/profile') My Profile
-  div.background
+        a(href='/jobs/alljobs') Job Board
+      div.homepage-link
+        a(href='/messages') Message Board
+      if userId
+        div.homepage-link
+          a(href='/profile') My Profile
+    div.background
+
+  

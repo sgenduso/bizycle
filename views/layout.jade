@@ -5,7 +5,7 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
   body
-    div.layer
+    div#layer
       div.navigation
         header 
           if !userId
@@ -13,7 +13,9 @@ html
             include ./partials/authModal.jade
           else
             p.welcome Welcome,  
-              =userFirstName + '!'
-            a.logged(href="/users/logout") Logout
+              =userFirstName 
+              ! &nbsp;&nbsp; |
+            a.welcome.logged(href="/users/logout") Logout
       block content
+      //- div.background
     script(src='javascripts/login.js')

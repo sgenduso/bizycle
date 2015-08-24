@@ -54,27 +54,6 @@ table {
   text-align: right;
 }
 
-#login-modal {
-  width: 50%;
-}
-
-.login-signup {
-  display: inline-block;
-  width: 50%;
-  float: left;
-  div {
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-  label {
-    display: inline-block;
-    width: 200px;
-  }
-  input {
-    display: inline-block;
-    // margin-left: 200px;
-  }
-}
 
 .message{
   border: 1px solid black;
@@ -87,7 +66,7 @@ table {
  float: right;
 }
 
-.layer{
+#layer{
   text-align: center;
 }
 
@@ -95,6 +74,28 @@ table {
   display: inline-block;
   margin-top: 5%;
   margin-bottom: 2%;
+}
+
+.page-title{
+	font-size: 50px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.center-link{
+	display: inline-block;
+	margin: 10px;
+	border-radius: 5px;
+	padding: 10px;
+	border: 4px solid $darkGrey;
+	background-color: $blue;
+	color: $darkGrey;
+
+  &:hover {
+  background-color: $green;
+  position: relative;
+	cursor: pointer;
+  }
 }
 
 .homepage-link {
@@ -106,6 +107,7 @@ table {
   border: 4px solid $darkGrey;
   background-color: $blue;
   color: $darkGrey;
+	text-decoration: none;
 
   &:hover {
   background-color: $green;
@@ -135,6 +137,7 @@ table {
     margin-top: 5px;
     font-weight: bold;
     font-size: 1.5em;
+		color: $darkGrey;
   }
 
 	.logged:hover{
@@ -142,14 +145,48 @@ table {
 		color: $darkGrey;
 	}
 
-	a .logged{
+	.logged{
 		text-decoration: none;
 		color: $darkGrey;
 		&:visited{
 			color: $darkGrey;
 		}
 	}
+}
 
+.new-job{
+	border: solid black 1px;
+	border-radius: 3px;
+	padding: 10px;
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: left;
 
+	div {
+		display: inline-block;
+		margin-right: 20px;
 
+	}
+
+	.location{
+		margin-left: 100px;
+	}
+
+	.left{
+		float: left;
+	}
+
+	.right{
+		float: right;
+	}
+
+	.bottom{
+		clear: both;
+		display: block;
+		div{
+			display: block;
+		}
+	}
 }

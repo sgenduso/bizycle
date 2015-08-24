@@ -50,22 +50,6 @@ table {
 #close-modal {
   text-align: right; }
 
-#login-modal {
-  width: 50%; }
-
-.login-signup {
-  display: inline-block;
-  width: 50%;
-  float: left; }
-  .login-signup div {
-    margin-bottom: 5px;
-    margin-top: 5px; }
-  .login-signup label {
-    display: inline-block;
-    width: 200px; }
-  .login-signup input {
-    display: inline-block; }
-
 .message {
   border: 1px solid black;
   display: inline-block;
@@ -75,13 +59,31 @@ table {
 .delete {
   float: right; }
 
-.layer {
+#layer {
   text-align: center; }
 
 .links {
   display: inline-block;
   margin-top: 5%;
   margin-bottom: 2%; }
+
+.page-title {
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 20px; }
+
+.center-link {
+  display: inline-block;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 4px solid #4A4B4E;
+  background-color: #7ECCE9;
+  color: #4A4B4E; }
+  .center-link:hover {
+    background-color: #B5C496;
+    position: relative;
+    cursor: pointer; }
 
 .homepage-link {
   display: inline-block;
@@ -91,7 +93,8 @@ table {
   padding: 10px;
   border: 4px solid #4A4B4E;
   background-color: #7ECCE9;
-  color: #4A4B4E; }
+  color: #4A4B4E;
+  text-decoration: none; }
   .homepage-link:hover {
     background-color: #B5C496;
     position: relative;
@@ -112,15 +115,40 @@ table {
     padding: 10px;
     margin-top: 5px;
     font-weight: bold;
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    color: #4A4B4E; }
   .navigation .logged:hover {
     cursor: pointer;
     color: #4A4B4E; }
-  .navigation a .logged {
+  .navigation .logged {
     text-decoration: none;
     color: #4A4B4E; }
-    .navigation a .logged:visited {
+    .navigation .logged:visited {
       color: #4A4B4E; }
+
+.new-job {
+  border: solid black 1px;
+  border-radius: 3px;
+  padding: 10px;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left; }
+  .new-job div {
+    display: inline-block;
+    margin-right: 20px; }
+  .new-job .location {
+    margin-left: 100px; }
+  .new-job .left {
+    float: left; }
+  .new-job .right {
+    float: right; }
+  .new-job .bottom {
+    clear: both;
+    display: block; }
+    .new-job .bottom div {
+      display: block; }
 
 #not-logged-in {
   display: inline-block;
@@ -133,9 +161,10 @@ html {
 
 body {
   font-family: "Abel";
+  color: #4A4B4E;
   opacity: 50%; }
 
-.layer {
+#layer {
   width: 100%;
   height: 100%;
   position: absolute; }
@@ -145,3 +174,51 @@ body {
   background-size: 55% auto;
   width: 100%;
   height: 65%; }
+
+#login-modal {
+  width: 50%;
+  border: solid #4A4B4E 5px;
+  box-shadow: 0 0 5px 2px #fbe975; }
+  #login-modal .login-signup {
+    display: inline-block;
+    width: 50%;
+    float: left; }
+    #login-modal .login-signup div {
+      margin-bottom: 5px;
+      margin-top: 5px; }
+    #login-modal .login-signup label {
+      display: inline-block;
+      width: 200px; }
+    #login-modal .login-signup input {
+      display: inline-block; }
+  #login-modal .deletemodal {
+    height: 40px; }
+  #login-modal input[type="text"], #login-modal input[type="password"], #login-modal input[type="email"] {
+    width: 150px;
+    height: 25px; }
+  #login-modal input {
+    font-family: "Abel";
+    font-style: italic;
+    font-size: 1.1em; }
+  #login-modal input[type="button"] {
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #F7F6F6;
+    font-style: normal;
+    border: 2px solid #4A4B4E;
+    border-radius: 5px;
+    color: #4A4B4E; }
+    #login-modal input[type="button"]:hover {
+      background-color: #7ECCE9; }
+  #login-modal #close-modal {
+    float: right;
+    border: 2px solid #F7F6F6;
+    background-color: #DF2425;
+    color: #F7F6F6; }
+    #login-modal #close-modal:hover {
+      border: 2px solid #DF2425;
+      background-color: #F7F6F6;
+      color: #DF2425; }
+  #login-modal .login {
+    border-right: solid #4A4B4E 2px;
+    box-sizing: border-box; }

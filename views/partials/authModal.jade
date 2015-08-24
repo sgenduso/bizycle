@@ -1,33 +1,33 @@
 dialog(id="login-modal")
-  div
+  div.deletemodal
     input#close-modal(type='button' value='X')
   div#errors
-  div.login-signup Log In
+  div.login-signup.login Log In
     form#login(action='/login' method='post')
       div
-        label(for='login-email') Email
-        input(type='email' id='login-email' name='login_email' required)
+        //- label(for='login-email') Email
+        input(type='email' id='login-email' name='login_email' placeholder='Email' required autofocus)
       div.append
-        label(for='login-password') Password
-        input(type='password' id='login-password' name='login_password' required)
+        //- label(for='login-password') Password
+        input(type='password' id='login-password' name='login_password' placeholder='Password' required)
       div
         input#submit-login(type='button' value='Log In')
-  div.login-signup Sign Up
+  div.login-signup.signup Sign Up
     form#signup(action='/signup' method='post')
       div
-        label(for='signup-first-name') First Name
-        input(type='text' id='signup-first-name' name='signup_first_name' required)
+        //label(for='signup-first-name') First Name
+        input(type='text' id='signup-first-name' name='signup_first_name' placeholder="First Name" required)
       div.append
-        label(for='signup-last-name') Last Name
-        input(type='text' id='signup-last-name' name='signup_last_name' required)
+        //label(for='signup-last-name') Last Name
+        input(type='text' id='signup-last-name' name='signup_last_name' placeholder="Last Name" required)
       div
-        label(for='signup-email') Email
-          input(type='email' id='signup-email' name='signup_email' required)
+        //- label(for='signup-email') Email
+        input(type='email' id='signup-email' name='signup_email' placeholder="Email" required)    
       div
-        label(for='signup-password') Password
-        input(type='password' id='signup-password' name='signup_password' required)
+        //- label(for='signup-password') Password
+        input(type='password' id='signup-password' name='signup_password' placeholder="Password" required)
       div
-        label(for='signup-confirm-password') Confirm Password
-        input(type='password' id='signup-confirm-password' name='signup_confirm_password' required)
+        //- label(for='signup-confirm-password') Confirm Password
+        input(type='password' id='signup-confirm-password' name='signup_confirm_password' placeholder="Confirm Password" required)
       div
         input#submit-signup(type='button' value='Sign Up')

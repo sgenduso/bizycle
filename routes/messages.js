@@ -5,12 +5,25 @@ var db = require('../models');
 var databaseQueries = require('../lib/database.js');
 
 router.get('/messages', function (req, res, next) {
+<<<<<<< HEAD
  databaseQueries.findAllMessages().then(function (messages) {
  if (messages.length>0){
    var msgPromises = messages.map(function (message, i) {
      return databaseQueries.findUserById(message.userId).then(function (user) {
        messages[i].dateNew = databaseQueries.dateParse(messages[i].datePosted);
        messages[i].postedBy = user.firstName+" "+user.lastName.substring(0,0)+".";
+=======
+  databaseQueries.findAllMessages().then(function (messages) {
+  if (messages.length>0){
+    var msgPromises = messages.map(function (message, i) {
+      return databaseQueries.findUserById(message.userId).then(function (user) {
+        messages[i].dateNew = databaseQueries.dateParse(messages[i].datePosted);
+        messages[i].postedBy = user.firstName+" "+user.lastName.substring(0,1)+".";
+      });
+    });
+    Promise.all(msgPromises).then(function () {
+       res.render("messages/messageboard", {messages:messages.reverse()});
+>>>>>>> 0d9c6ce76f5c459c3539cc2fc22efdb2dc4a3aba
      });
    });
    Promise.all(msgPromises).then(function () {

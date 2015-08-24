@@ -2,38 +2,38 @@ extends ../layout
 
 block content
   header
-    if !userId
-      p(class="not-logged-in" id='jobs/alljobs') Sign In
-      include ../partials/authModal.jade
-    else
-      p Hi,
-        =userFirstName
-  h1= title
+  h1.page-title= title
   div.add-job
     if loggedIn
-      a(id="add-job" href='/jobs/newjob') Post a job to the board
+      div.homepage-link
+        a(id="add-job" href='/jobs/newjob') Post a job
       if jobs 
         each job in jobs
-          .newJob
-            .left
+          .new-job
+            div
+              p Date Posted: 
+                = job.datePosted
+            div
               a(href=job.source)
                 h1= job.jobTitle
+            div
               p= job.companyName
-            .right
+            div.location
               p= job.location
-              p Date Posted
-                = job.activation
             .bottom
-              p= job.description
-              p= job.source
+              div
+                p= job.source
+              div
+                p Description: 
+                  = job.description
     else
       div
         p= userID
-        p(class="not-logged-in" id='jobs/newjob') Post a job to the board
+        p.center-link(class="not-logged-in" id='jobs/newjob') Post a job
         include ../partials/authModal.jade
         if jobs 
           each job in jobs
-            .newJob
+            .new-job
               .left
                 a(href=job.source)
                   h1= job.jobTitle
