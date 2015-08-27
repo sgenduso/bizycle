@@ -3,10 +3,16 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+    //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+    //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+    script(src='https://code.jquery.com/jquery-2.1.4.min.js')
+    //- script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js')
+    script(src='javascripts/app.js' type="text/javascript")
   body
     div#layer
-      div.navigation
+      div(id='navigation' class='navbar navbar-default navbar-fixed-top')
         header 
           if !userId
             p.welcome.logged(class="not-logged-in" id='index') Sign In
@@ -16,6 +22,13 @@ html
               =userFirstName 
               !&nbsp;&nbsp; |
             a.welcome.logged(href="/users/logout") Logout
+          div.nav-links
+            a(href='/') Home 
+            &nbsp;&nbsp;|  
+            a(href='/jobs/alljobs') Job Board 
+            &nbsp;&nbsp;|  
+            a(href='/messages') Message Board
+            
       block content
       //- div.background
-    script(src='javascripts/login.js')
+      script(src='javascripts/login.js')

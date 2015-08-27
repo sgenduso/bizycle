@@ -64,7 +64,7 @@ table {
 
 .links {
   display: inline-block;
-  margin-top: 5%;
+  margin-top: 8%;
   margin-bottom: 2%; }
 
 .page-title {
@@ -106,24 +106,44 @@ table {
     .homepage-link a:visited {
       color: #4A4B4E; }
 
-.navigation {
+.nav-links {
+  float: right;
+  padding: 10px;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #4A4B4E; }
+  .nav-links a {
+    text-decoration: none;
+    margin-left: 10px;
+    color: #4A4B4E; }
+    .nav-links a:visited {
+      color: #4A4B4E; }
+    .nav-links a:hover {
+      text-shadow: 0 0 3px #b5c496; }
+
+#navigation {
+  position: fixed;
   background-color: #FBE975;
-  height: 8%;
+  height: 55px;
+  width: 100%;
   border-bottom: solid 4px #4A4B4E; }
-  .navigation .welcome {
+  #navigation .welcome {
     float: left;
     padding: 10px;
     margin-top: 5px;
     font-weight: bold;
     font-size: 1.5em;
     color: #4A4B4E; }
-  .navigation .logged:hover {
+    #navigation .welcome:hover {
+      text-shadow: 0 0 3px #b5c496; }
+  #navigation .logged:hover {
     cursor: pointer;
     color: #4A4B4E; }
-  .navigation .logged {
+  #navigation .logged {
     text-decoration: none;
     color: #4A4B4E; }
-    .navigation .logged:visited {
+    #navigation .logged:visited {
       color: #4A4B4E; }
 
 .new-job {
@@ -160,7 +180,7 @@ html {
   background-color: #f8f7f7; }
 
 body {
-  font-family: "Abel";
+  font-family: 'Abel', normal;
   color: #4A4B4E;
   opacity: 50%; }
 

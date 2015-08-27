@@ -50,6 +50,7 @@ table {
 /*END OF RESET*/
 
 
+
 #close-modal {
   text-align: right;
 }
@@ -72,7 +73,7 @@ table {
 
 .links {
   display: inline-block;
-  margin-top: 5%;
+  margin-top: 8%;
   margin-bottom: 2%;
 }
 
@@ -126,18 +127,47 @@ table {
   }
 }
 
-.navigation {
+.nav-links{
+    float: right;
+    padding: 10px;
+		margin-top: 5px;
+    font-weight: bold;
+    font-size: 1.5em;
+		color: $darkGrey;
+
+		a{
+			text-decoration: none;
+			margin-left: 10px;
+			color:$darkGrey;
+
+			&:visited{
+				color:$darkGrey;
+			}
+
+			&:hover{
+				text-shadow: 0 0 3px rgba($green, 1);
+			}
+		}
+  }
+
+
+#navigation {
+	position: fixed;
   background-color: $yellow;
-  height: 8%;
+  height: 55px;
+	width: 100%;
   border-bottom: solid 4px $darkGrey;
 
   .welcome {
     float: left;
     padding: 10px;
-    margin-top: 5px;
+		margin-top: 5px;
     font-weight: bold;
     font-size: 1.5em;
 		color: $darkGrey;
+		&:hover{
+			text-shadow: 0 0 3px rgba($green, 1);
+		}
   }
 
 	.logged:hover{
