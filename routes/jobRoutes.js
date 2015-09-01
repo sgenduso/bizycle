@@ -19,13 +19,14 @@ router.get('/newjob', function (req, res, next) {
 
 router.post('/newjob', function (req, res, next) {
   var errorCheck = validate(req.body.title, req.body.company, req.body.location, req.body.description, req.body.expiry);
-  console.log(errorCheck, "ERRORS");
+  // console.log(errorCheck, "ERRORS");
   var userId = req.session.userId;
   if(errorCheck.length > 0){
     res.render('jobs/newjob', {errors: errorCheck});
   } else {
     databaseQueries.newJobs(userId, req.body)
-  .then(function () {
+  .then(function (data) {
+    console.log(data, "RETURN");
     res.redirect('/jobs/alljobs');
   });
   }
