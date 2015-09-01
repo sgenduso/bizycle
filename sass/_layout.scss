@@ -127,7 +127,7 @@ table {
   }
 }
 
-.nav-links{
+#nav-links{
     float: right;
     padding: 10px;
 		margin-top: 5px;
@@ -145,7 +145,7 @@ table {
 			}
 
 			&:hover{
-				text-shadow: 0 0 3px rgba($green, 1);
+				text-shadow: 0 0 5px rgba($green, 1);
 			}
 		}
   }
@@ -166,7 +166,7 @@ table {
     font-size: 1.5em;
 		color: $darkGrey;
 		&:hover{
-			text-shadow: 0 0 3px rgba($green, 1);
+			text-shadow: 0 0 5px rgba($green, 1);
 		}
   }
 
@@ -219,4 +219,15 @@ table {
 			display: block;
 		}
 	}
+}
+
+
+.bikes{
+	height: 500px;
+	// margin: 0;
+	background-image: url('../images/CoBBB-logo-bottom-only.png');
+	background-size: 100% 100%;
+	// background-position: bottom;
+	// background-attachment: fixed;
+	// background-repeat: no-repeat;
 }

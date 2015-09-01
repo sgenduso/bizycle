@@ -106,21 +106,21 @@ table {
     .homepage-link a:visited {
       color: #4A4B4E; }
 
-.nav-links {
+#nav-links {
   float: right;
   padding: 10px;
   margin-top: 5px;
   font-weight: bold;
   font-size: 1.5em;
   color: #4A4B4E; }
-  .nav-links a {
+  #nav-links a {
     text-decoration: none;
     margin-left: 10px;
     color: #4A4B4E; }
-    .nav-links a:visited {
+    #nav-links a:visited {
       color: #4A4B4E; }
-    .nav-links a:hover {
-      text-shadow: 0 0 3px #b5c496; }
+    #nav-links a:hover {
+      text-shadow: 0 0 5px #b5c496; }
 
 #navigation {
   position: fixed;
@@ -136,7 +136,7 @@ table {
     font-size: 1.5em;
     color: #4A4B4E; }
     #navigation .welcome:hover {
-      text-shadow: 0 0 3px #b5c496; }
+      text-shadow: 0 0 5px #b5c496; }
   #navigation .logged:hover {
     cursor: pointer;
     color: #4A4B4E; }
@@ -169,6 +169,11 @@ table {
     display: block; }
     .new-job .bottom div {
       display: block; }
+
+.bikes {
+  height: 500px;
+  background-image: url("../images/CoBBB-logo-bottom-only.png");
+  background-size: 100% 100%; }
 
 #not-logged-in {
   display: inline-block;

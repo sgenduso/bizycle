@@ -6,3 +6,9 @@ var addRequirement = function () {
   newDiv.appendChild(newInput);
   document.getElementById('dynamicInput').appendChild(newDiv);
 };
+
+var navLinks = document.getElementById('nav-links');
+
+if (window.location.pathname ==='/') {
+  navLinks.style.display = 'none';
+}
