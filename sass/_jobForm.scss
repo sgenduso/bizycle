@@ -94,10 +94,11 @@ input:focus, textarea:focus {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: url('../images/CoBBB-logo-bottom-only-copy.png');
+  background-image: url('../images/CoBBB-logo-bikes-only.png');
   // background-image:
   background-position: bottom;
   background-repeat: repeat-x;
+  // overflow: hidden;
 }
 
 .subtle-background{
