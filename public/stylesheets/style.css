@@ -197,6 +197,7 @@ body {
 .background {
   background-image: url("../images/CoBBB-logo.png");
   background-size: 55% auto;
+  background-repeat: repeat-x;
   width: 100%;
   height: 65%; }
 
@@ -247,3 +248,78 @@ body {
   #login-modal .login {
     border-right: solid #4A4B4E 2px;
     box-sizing: border-box; }
+
+#new-job-form {
+  display: inline-block;
+  width: 40%;
+  border: 4px solid #4A4B4E;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  text-align: left;
+  background-color: #7ecce9;
+  box-shadow: 0 0 10px 2px rgba(74, 75, 78, 0.5); }
+  #new-job-form input {
+    width: 100%;
+    height: 35px; }
+  #new-job-form input, #new-job-form textarea {
+    font-family: "Abel";
+    font-size: 1.1em;
+    margin: 5px auto;
+    background-color: #F7F6F6;
+    border: 1px solid rgba(74, 75, 78, 0.5);
+    border-radius: 3px;
+    padding: 5px;
+    padding-right: 0;
+    box-sizing: border-box; }
+  #new-job-form input[type="submit"] {
+    height: 55px;
+    font-size: 2em;
+    font-weight: bold;
+    font-style: normal;
+    border: 2px solid #4A4B4E;
+    border-radius: 5px;
+    background-color: #F7F6F6;
+    color: #4A4B4E; }
+    #new-job-form input[type="submit"]:hover {
+      background-color: #4A4B4E;
+      color: #F7F6F6; }
+  #new-job-form input[type='date'] {
+    width: 200px; }
+  #new-job-form textarea {
+    width: 100%; }
+  #new-job-form #experience, #new-job-form #description {
+    height: 200px; }
+  #new-job-form #contact {
+    height: 100px; }
+  #new-job-form input:focus, #new-job-form textarea:focus {
+    outline: 0;
+    box-shadow: 0 0 5px #4a4b4e;
+    border: 2px solid #4a4b4e; }
+  #new-job-form .errors {
+    color: #DF2425;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px; }
+  #new-job-form .form-p {
+    font-size: 1.1em; }
+  #new-job-form .form-title {
+    font-size: 1.1em;
+    margin-bottom: 5px; }
+
+.cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("../images/CoBBB-logo-bottom-only-copy.png");
+  background-position: bottom;
+  background-repeat: repeat-x; }
+
+.subtle-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-image: url("../images/CoBBB-subtle.png"); }
