@@ -323,3 +323,84 @@ body {
   height: 100%;
   z-index: -2;
   background-image: url("../images/CoBBB-subtle.png"); }
+
+#profile-heading {
+  margin-top: 80px; }
+
+.page-subheader {
+  font-size: 25px;
+  margin-top: 40px;
+  margin-bottom: 20px; }
+
+.post {
+  width: 60%;
+  margin: 0 auto;
+  padding: 2%;
+  border-radius: 4px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); }
+  .post .job-info .job-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    float: left; }
+  .post .job-info .job-details {
+    clear: left;
+    text-align: left; }
+    .post .job-info .job-details .job-location {
+      font-weight: bold;
+      margin-bottom: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px; }
+    .post .job-info .job-details .job-description {
+      padding-top: 10px;
+      padding-bottom: 10px; }
+      .post .job-info .job-details .job-description h4 {
+        display: inline-block;
+        margin-right: 1%;
+        font-weight: bold; }
+      .post .job-info .job-details .job-description p {
+        display: inline-block; }
+
+.delete-item {
+  margin-top: 10px;
+  display: inline-block; }
+  .delete-item a:link {
+    text-decoration: none; }
+  .delete-item a:visited {
+    text-decoration: none; }
+  .delete-item a {
+    -moz-box-shadow: inset 0px 1px 0px 0px #cf866c;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #cf866c;
+    box-shadow: inset 0px 1px 0px 0px #cf866c;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff3b05), color-stop(1, #bc3315));
+    background: -moz-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
+    background: -webkit-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
+    background: -o-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
+    background: -ms-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
+    background: linear-gradient(to bottom, #ff3b05 5%, #bc3315 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b05', endColorstr='#bc3315',GradientType=0);
+    background-color: #ff3b05;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #942911;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #854629; }
+  .delete-item a:hover {
+    text-decoration: none;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bc3315), color-stop(1, #ff3b05));
+    background: -moz-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
+    background: -webkit-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
+    background: -o-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
+    background: -ms-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
+    background: linear-gradient(to bottom, #bc3315 5%, #ff3b05 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bc3315', endColorstr='#ff3b05',GradientType=0);
+    background-color: #bc3315; }
+  .delete-item a:active {
+    text-decoration: none;
+    position: relative;
+    top: 1px; }

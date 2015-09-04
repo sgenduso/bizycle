@@ -1,18 +1,25 @@
 extends layout
 block content
 
-  h1 Your Profile
-  div
+  h1#profile-heading.page-title Your Profile
+  div.delete-item
     a(href='/profile/' + userId + '/delete') Delete Profile
   if jobs
-    each job in jobs    
-      a(href='/job/'+ job._id + '/edit')= job.jobTitle
-      p= job.location
-      p= job.description
-      div
-        a(href='/job/' + job._id + '/delete') Delete Job Post
+    h1.page-subheader Your Jobs
+    each job in jobs
+      div.post
+        div.job-info
+          h3.job-title
+            a(href='/job/'+ job._id + '/edit')= job.jobTitle
+          div.job-details
+            p.job-location= job.location
+            div.job-description
+              h4 Description:
+              p= job.description
+          div.delete-item
+            a(href='/job/' + job._id + '/delete') Delete
   if posts
-    h1 Your Messages
+    h1.page-subheader Your Messages
     each post in posts
       div.post
         a(href='/messages/'+post._id+"/delete") Delete Message
