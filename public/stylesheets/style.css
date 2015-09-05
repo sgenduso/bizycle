@@ -70,7 +70,10 @@ table {
 .page-title {
   font-size: 50px;
   margin-top: 50px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  padding-top: 30px;
+  display: inline-block;
+  margin-right: 100px; }
 
 .center-link {
   display: inline-block;
@@ -146,6 +149,18 @@ table {
     #navigation .logged:visited {
       color: #4A4B4E; }
 
+.homepage-link-top {
+  display: inline-block;
+  float: left;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 4px solid #4A4B4E;
+  background-color: #7ECCE9;
+  color: #4A4B4E;
+  text-decoration: none;
+  margin-top: 80px; }
+
 .new-job {
   border: solid black 1px;
   border-radius: 3px;
@@ -154,7 +169,10 @@ table {
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  text-align: left; }
+  text-align: left;
+  background-color: #7ECCE9;
+  color: #4A4B4E;
+  box-shadow: 8px 8px 5px #888888; }
   .new-job div {
     display: inline-block;
     margin-right: 20px; }
@@ -166,9 +184,21 @@ table {
     float: right; }
   .new-job .bottom {
     clear: both;
-    display: block; }
+    display: block;
+    text-align: center; }
     .new-job .bottom div {
       display: block; }
+    .new-job .bottom .description {
+      width: 100%; }
+      .new-job .bottom .description:hover {
+        background: #4A4B4E;
+        color: white;
+        padding: 8px;
+        border-radius: 8px; }
+    .new-job .bottom #job {
+      display: none;
+      padding-top: 15px;
+      text-align: left; }
 
 .bikes {
   height: 500px;

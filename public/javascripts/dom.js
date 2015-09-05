@@ -12,3 +12,9 @@ var navLinks = document.getElementById('nav-links');
 if (window.location.pathname ==='/') {
   navLinks.style.display = 'none';
 }
+
+var toggleDescription = function () {
+
+  var job = document.getElementById('job');
+  job.style.display = (job.style.display === 'none' ? 'block' : 'none' );
+}
