@@ -198,6 +198,16 @@ table {
   color: $darkGrey;
 	text-decoration: none;
 	margin-top: 80px;
+
+	a{
+		text-decoration: none;
+		color: $darkGrey;
+		text-align: center;
+		&:hover{
+			color: $yellow;
+			pointer: hand;
+		}
+	}
 }
 .new-job{
 	border: solid black 1px;
@@ -216,6 +226,14 @@ table {
 		display: inline-block;
 		margin-right: 20px;
 
+	}
+	a {
+		color: $darkGrey;
+		font-size: 25px;
+		text-decoration: none;
+		&:hover{
+			color: $yellow;
+		}
 	}
 
 	.location{
@@ -244,6 +262,7 @@ table {
 				color: white;
 				padding: 8px;
 				border-radius: 8px;
+				pointer: hand;
 			}
 		}
 		#job {

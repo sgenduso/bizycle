@@ -160,6 +160,13 @@ table {
   color: #4A4B4E;
   text-decoration: none;
   margin-top: 80px; }
+  .homepage-link-top a {
+    text-decoration: none;
+    color: #4A4B4E;
+    text-align: center; }
+    .homepage-link-top a:hover {
+      color: #FBE975;
+      pointer: hand; }
 
 .new-job {
   border: solid black 1px;
@@ -176,6 +183,12 @@ table {
   .new-job div {
     display: inline-block;
     margin-right: 20px; }
+  .new-job a {
+    color: #4A4B4E;
+    font-size: 25px;
+    text-decoration: none; }
+    .new-job a:hover {
+      color: #FBE975; }
   .new-job .location {
     margin-left: 100px; }
   .new-job .left {
@@ -194,7 +207,8 @@ table {
         background: #4A4B4E;
         color: white;
         padding: 8px;
-        border-radius: 8px; }
+        border-radius: 8px;
+        pointer: hand; }
     .new-job .bottom #job {
       display: none;
       padding-top: 15px;
