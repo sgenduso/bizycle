@@ -1,12 +1,12 @@
 extends ../layout
 
 block content
+  div.subtle-background
+  div.cover
   div.top-bar
     h1.page-title= title
     div.homepage-link-top
       a(id="add-job" href='/jobs/newjob') Post a job
-  div.subtle-background
-  //- div.cover
   div
     if loggedIn
       //- div.homepage-link
