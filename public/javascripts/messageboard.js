@@ -21,6 +21,7 @@ function checkForLikes(thumb, i) {
   messageXhr.open('GET', '/messages/liked/'+thumb.id, false);
   messageXhr.send(null);
   var xhrResponse = JSON.parse(messageXhr.response);
+  console.log(xhrResponse);
   amountLiked[i].innerHTML="Number of Likes: "+xhrResponse.numOfLikes;
   if(xhrResponse.userInLikedArray === true){
     thumb.classList.add('fa-thumbs-up');
@@ -30,7 +31,7 @@ function checkForLikes(thumb, i) {
    thumb.classList.remove('fa-thumbs-up');
   }
  }
- 
+
 
 function toggleLikes(thumb, i) {
   var messageXhr = new XMLHttpRequest();

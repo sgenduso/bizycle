@@ -1,40 +1,47 @@
 extends ../layout
 
 block content
-  h1 Welcome to the Message Board
-  p#post-msg Post Message to Board
-  if(messages)
-    for item in messages
-     div.message
-      if(item.userId === userId)
-        form(action="/messages/"+item._id+"/delete" method="post")
-         input.delete(type='submit' value ="Delete Message")
-      p
-      Strong Subject: 
-      =item.subject
-      p=item.body
-      p=item.dateNew
-      p
-      Strong Posted By: 
-      =item.postedBy
-      if userId
-        p
-        i.thumbs-up(class="fa fa-2x" id=item._id)
-      p.liked
-  dialog#new-msg-modal
-    form(action='/messages' method='post')
-      div
-        input#close-msg-modal(type='button' value='X')
-      div
-        label(for='subject') Subject
-        input(type='text', id='submit', name='subject' required)
-      div
-        label(for='body') Message
-        textarea(id='body', name='message_body' required)
-      div
-        input(type='submit' value='Post Message')
-  script(src='javascripts/messageboard.js')
-  
+  div.container
+    h1 Welcome to the Message Board
+    p#post-msg Post Message to Board
+    if(messages)
+      for item in messages
+       div.message
+        if(item.userId === userId)
+          form(action="/messages/"+item._id+"/delete" method="post")
+           input.delete(type='submit' value ="Delete Message")
+        div.posted
+          p
+          Strong Posted By: 
+          =item.postedBy
+          p=item.dateNew
+        div.thumb
+          p
+          i.thumbs-up(class="fa fa-2x" id=item._id)
+          p.liked
+        div.subject
+          p
+          Strong Subject: 
+          =item.subject
+          p=item.body
+        
+        if userId
+        div.likes
+        
+    dialog#new-msg-modal
+      form(action='/messages' method='post')
+        div
+          input#close-msg-modal(type='button' value='X')
+        div
+          label(for='subject') Subject
+          input(type='text', id='submit', name='subject' required)
+        div
+          label(for='body') Message
+          textarea(id='body', name='message_body' required)
+        div
+          input(type='submit' value='Post Message')
+    script(src='javascripts/messageboard.js')
+    
   
 
  
