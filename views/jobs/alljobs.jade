@@ -1,35 +1,38 @@
 extends ../layout
 
 block content
-  header
-  h1.page-title= title
-  div.add-job
+  div.top-bar
+    h1.page-title= title
+    div.homepage-link-top
+      a(id="add-job" href='/jobs/newjob') Post a job
+  div.subtle-background
+  //- div.cover
+  div
     if loggedIn
-      div.homepage-link
-        a(id="add-job" href='/jobs/newjob') Post a job
+      //- div.homepage-link
+      //-   a(id="add-job" href='/jobs/newjob') Post a job
       if jobs 
         each job in jobs
           .new-job
-            div
-              p Date Posted: 
-                = job.datePosted
-            div
+            .left
               a(href=job.source)
-                h1= job.jobTitle
-            div
-              p= job.companyName
-            div.location
-              p= job.location
+                h1= job.jobTitle  
+              br  
+              p= job.companyName  
+            .right
+              p= job.location  
+              br
+              p Date Posted: 
             .bottom
-              div
                 p= job.source
-              div
-                p Description: 
+                br
+                button(class='description' onclick='toggleDescription()') Description
+                div#job
                   = job.description
     else
       div
         p= userID
-        p.center-link(class="not-logged-in" id='jobs/newjob') Post a job
+        //- p.homepage-link(class="not-logged-in" id='jobs/newjob') Post a job
         include ../partials/authModal.jade
         if jobs 
           each job in jobs
@@ -43,7 +46,10 @@ block content
                 p Date Posted
                   = job.activation
               .bottom
-                p= job.description
                 p= job.source
-  footer.bikes
+                br
+                button(class='description' onclick='toggleDescription()') Description
+                div#job
+                  = job.description
   script(src='../javascripts/login.js')
+  script(src='../javascripts/dom.js')

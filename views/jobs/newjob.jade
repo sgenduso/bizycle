@@ -2,41 +2,42 @@ extends ../layout
 
 block content
   h1 Add a New Job
-  if errors
-    each err in errors
-      p= err
-  form(action="/jobs/newjob", method="post")
-    label(for="title") Job Title 
-    input(type="text" id="title" name="title" placeholder="Job Title")
+  div.subtle-background
+  div.cover
+  form#new-job-form(action="/jobs/newjob", method="post")
+    if errors
+      ol.errors
+        each err in errors
+          li= err
+    p.form-title Enter job information below:
+    input(type="text" id="title" name="title" placeholder="Job Title" autofocus)
     p
-    label(for="company") Company Name
     input(type="text" id="company" name="company" placeholder='Company Name')
     p
-    label(for="location") Job Location 
-    input(type="text" id="location" name="location" placeholder="City, State")
+    input(type="text" id="location" name="location" placeholder="Location (i.e. City, State)")
     p
-    label(for="experience") Experience 
-    textarea(type="text" id="experience" name="experience" placeholder='Experience')
+    textarea(type="text" id="description" name="description" placeholder='Job Description')
+    p
+    textarea(type="text" id="experience" name="experience" placeholder='Qualifications/Experience')
     //- div#dynamicInput
     //-   label(for="requirements") Requirements
     //-   input(type="text" name="myInputs[]")
     //- p
     //- input(type="button" value="Add Requirement" onClick="addRequirement()")
+    p.form-p
+      Strong
+      label(for="activate") Activation - When do you want the posting to go live on the site?
     p
-    label(for="description") Job Description 
-    textarea(type="text" name='description' placeholder='Job Description') 
+      input(type="date" id="activate" name="activate")
+    p.form-p
+      Strong
+      label(for="expiry") Expiration - When do you want the posting to come off the site?
     p
-    label(for="expiry") Expiration Date
-    input(type="date" id="expiry" name="expiry")
+      input(type="date" id="expiry" name="expiry")
     p
-    label(for="activate") Activation Date
-    input(type="date" id="activate" name="activate")
+    textarea(type='text' id='contact' name='contact' placeholder='Contact Information')
     p
-    label(for='contact') Contact Information
-    textarea(type='text' id='contact' name='contact')
+    input(type="text" id="source" name="source" placeholder='Link to external posting')
     p
-    label(for="source") Job Link
-    input(type="text" id="source" name="source" placeholder='Job URL')
-    p
-    input(type="submit" value="create job")
+    input(type="submit" value="Post Job")
  script(src="/dom.js")

@@ -78,7 +78,10 @@ table {
 .page-title {
   font-size: 50px;
   margin-top: 50px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  padding-top: 30px;
+  display: inline-block;
+  margin-right: 100px; }
 
 .center-link {
   display: inline-block;
@@ -154,6 +157,25 @@ table {
     #navigation .logged:visited {
       color: #4A4B4E; }
 
+.homepage-link-top {
+  display: inline-block;
+  float: left;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 4px solid #4A4B4E;
+  background-color: #7ECCE9;
+  color: #4A4B4E;
+  text-decoration: none;
+  margin-top: 80px; }
+  .homepage-link-top a {
+    text-decoration: none;
+    color: #4A4B4E;
+    text-align: center; }
+    .homepage-link-top a:hover {
+      color: #FBE975;
+      pointer: hand; }
+
 .new-job {
   border: solid black 1px;
   border-radius: 3px;
@@ -162,10 +184,19 @@ table {
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  text-align: left; }
+  text-align: left;
+  background-color: #7ECCE9;
+  color: #4A4B4E;
+  box-shadow: 8px 8px 5px #888888; }
   .new-job div {
     display: inline-block;
     margin-right: 20px; }
+  .new-job a {
+    color: #4A4B4E;
+    font-size: 25px;
+    text-decoration: none; }
+    .new-job a:hover {
+      color: #FBE975; }
   .new-job .location {
     margin-left: 100px; }
   .new-job .left {
@@ -174,9 +205,22 @@ table {
     float: right; }
   .new-job .bottom {
     clear: both;
-    display: block; }
+    display: block;
+    text-align: center; }
     .new-job .bottom div {
       display: block; }
+    .new-job .bottom .description {
+      width: 100%; }
+      .new-job .bottom .description:hover {
+        background: #4A4B4E;
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+        pointer: hand; }
+    .new-job .bottom #job {
+      display: none;
+      padding-top: 15px;
+      text-align: left; }
 
 .bikes {
   height: 500px;
@@ -205,6 +249,7 @@ body {
 .background {
   background-image: url("../images/CoBBB-logo.png");
   background-size: 55% auto;
+  background-repeat: repeat-x;
   width: 100%;
   height: 65%; }
 
@@ -278,3 +323,159 @@ h1 {
   #login-modal .login {
     border-right: solid #4A4B4E 2px;
     box-sizing: border-box; }
+
+#new-job-form {
+  display: inline-block;
+  width: 40%;
+  border: 4px solid #4A4B4E;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  text-align: left;
+  background-color: #7ecce9;
+  box-shadow: 0 0 10px 2px rgba(74, 75, 78, 0.5); }
+  #new-job-form input {
+    width: 100%;
+    height: 35px; }
+  #new-job-form input, #new-job-form textarea {
+    font-family: "Abel";
+    font-size: 1.1em;
+    margin: 5px auto;
+    background-color: #F7F6F6;
+    border: 1px solid rgba(74, 75, 78, 0.5);
+    border-radius: 3px;
+    padding: 5px;
+    padding-right: 0;
+    box-sizing: border-box; }
+  #new-job-form input[type="submit"] {
+    height: 55px;
+    font-size: 2em;
+    font-weight: bold;
+    font-style: normal;
+    border: 2px solid #4A4B4E;
+    border-radius: 5px;
+    background-color: #F7F6F6;
+    color: #4A4B4E; }
+    #new-job-form input[type="submit"]:hover {
+      background-color: #4A4B4E;
+      color: #F7F6F6; }
+  #new-job-form input[type='date'] {
+    width: 200px; }
+  #new-job-form textarea {
+    width: 100%; }
+  #new-job-form #experience, #new-job-form #description {
+    height: 200px; }
+  #new-job-form #contact {
+    height: 100px; }
+  #new-job-form input:focus, #new-job-form textarea:focus {
+    outline: 0;
+    box-shadow: 0 0 5px #4a4b4e;
+    border: 2px solid #4a4b4e; }
+  #new-job-form .errors {
+    color: #DF2425;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px; }
+  #new-job-form .form-p {
+    font-size: 1.1em; }
+  #new-job-form .form-title {
+    font-size: 1.1em;
+    margin-bottom: 5px; }
+
+.cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("../images/CoBBB-logo-bikes-only.png");
+  background-position: bottom;
+  background-repeat: repeat-x; }
+
+.subtle-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-image: url("../images/CoBBB-subtle.png"); }
+
+#profile-heading {
+  margin-top: 80px; }
+
+.page-subheader {
+  font-size: 25px;
+  margin-top: 40px;
+  margin-bottom: 20px; }
+
+.post {
+  width: 60%;
+  margin: 0 auto;
+  padding: 2%;
+  border-radius: 4px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); }
+  .post .job-info .job-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    float: left; }
+  .post .job-info .job-details {
+    clear: left;
+    text-align: left; }
+    .post .job-info .job-details .job-location {
+      font-weight: bold;
+      margin-bottom: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px; }
+    .post .job-info .job-details .job-description {
+      padding-top: 10px;
+      padding-bottom: 10px; }
+      .post .job-info .job-details .job-description h4 {
+        display: inline-block;
+        margin-right: 1%;
+        font-weight: bold; }
+      .post .job-info .job-details .job-description p {
+        display: inline-block; }
+
+.delete-item {
+  margin-top: 10px;
+  display: inline-block; }
+  .delete-item a:link {
+    text-decoration: none; }
+  .delete-item a:visited {
+    text-decoration: none; }
+  .delete-item a {
+    -moz-box-shadow: inset 0px 1px 0px 0px #cf866c;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #cf866c;
+    box-shadow: inset 0px 1px 0px 0px #cf866c;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff3b05), color-stop(1, #bc3315));
+    background: -moz-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
+    background: -webkit-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
+    background: -o-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
+    background: -ms-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
+    background: linear-gradient(to bottom, #ff3b05 5%, #bc3315 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b05', endColorstr='#bc3315',GradientType=0);
+    background-color: #ff3b05;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #942911;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #854629; }
+  .delete-item a:hover {
+    text-decoration: none;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bc3315), color-stop(1, #ff3b05));
+    background: -moz-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
+    background: -webkit-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
+    background: -o-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
+    background: -ms-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
+    background: linear-gradient(to bottom, #bc3315 5%, #ff3b05 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bc3315', endColorstr='#ff3b05',GradientType=0);
+    background-color: #bc3315; }
+  .delete-item a:active {
+    text-decoration: none;
+    position: relative;
+    top: 1px; }
