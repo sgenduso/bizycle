@@ -56,21 +56,6 @@ table {
 }
 
 
-.message{
-  border: 1px solid black;
-  display: inline-block;
-  //width: 300px;
-  margin:20px;
-	text-align: left;
-	border: solid black 1px;
-	border-radius: 3px;
-	padding: 10px;
-	width: 60%;
-	margin: 0 auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	text-align: left;
-}
 
 .delete{
  float: right;
@@ -84,15 +69,6 @@ table {
   display: inline-block;
   margin-top: 8%;
   margin-bottom: 2%;
-}
-
-.page-title{
-	font-size: 50px;
-	margin-top: 50px;
-	margin-bottom: 20px;
-	padding-top: 30px;
-	display: inline-block;
-	margin-right: 100px;
 }
 
 .center-link{
@@ -196,91 +172,6 @@ table {
 	}
 }
 
-.homepage-link-top {
-  display: inline-block;
-  float: left;
-  margin: 10px;
-  border-radius: 5px;
-  padding: 10px;
-  border: 4px solid $darkGrey;
-  background-color: $blue;
-  color: $darkGrey;
-	text-decoration: none;
-	margin-top: 80px;
-
-	a{
-		text-decoration: none;
-		color: $darkGrey;
-		text-align: center;
-		&:hover{
-			color: $yellow;
-			pointer: hand;
-		}
-	}
-}
-.new-job{
-	border: solid black 1px;
-	border-radius: 3px;
-	padding: 10px;
-	width: 60%;
-	margin: 0 auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	text-align: left;
-	background-color: $blue;
-	color: $darkGrey;
-	box-shadow: 8px 8px 5px #888888;
-
-	div {
-		display: inline-block;
-		margin-right: 20px;
-
-	}
-	a {
-		color: $darkGrey;
-		font-size: 25px;
-		text-decoration: none;
-		&:hover{
-			color: $yellow;
-		}
-	}
-
-	.location{
-		margin-left: 100px;
-	}
-
-	.left{
-		float: left;
-	}
-
-	.right{
-		float: right;
-	}
-
-	.bottom{
-		clear: both;
-		display: block;
-		text-align: center;
-		div{
-			display: block;
-		}
-		.description {
-			width: 100%;
-			&:hover{
-				background: $darkGrey;
-				color: white;
-				padding: 8px;
-				border-radius: 8px;
-				pointer: hand;
-			}
-		}
-		#job {
-			display: none;
-			padding-top: 15px;
-			text-align: left;
-		}
-	}
-}
 
 
 .bikes{

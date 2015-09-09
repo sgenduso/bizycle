@@ -1,0 +1,29 @@
+.message{
+  border: 1px solid black;
+  display: inline-block;
+  //width: 300px;
+  margin:20px;
+	text-align: left;
+	border: solid black 1px;
+	border-radius: 3px;
+	padding: 10px;
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: left;
+}
+.thumb{
+  float:left;
+}
+
+.likes{
+  margin-left: 70px;
+}
+
+.posted{
+  top:0px;
+  margin: 10px;
+  width: 100%;
+
+}

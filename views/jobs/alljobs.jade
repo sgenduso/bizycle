@@ -3,53 +3,54 @@ extends ../layout
 block content
   div.subtle-background
   div.cover
-  div.top-bar
-    h1.page-title= title
-    div.homepage-link-top
-      a(id="add-job" href='/jobs/newjob') Post a job
-  div
-    if loggedIn
-      //- div.homepage-link
-      //-   a(id="add-job" href='/jobs/newjob') Post a job
-      if jobs 
-        each job in jobs
-          .new-job
-            .left
-              a(href=job.source)
-                h1= job.jobTitle  
-              br  
-              p= job.companyName  
-            .right
-              p= job.location  
-              br
-              p Date Posted: 
-            .bottom
-                p= job.source
-                br
-                button(class='description' onclick='toggleDescription()') Description
-                div#job
-                  = job.description
-    else
-      div
-        p= userID
-        //- p.homepage-link(class="not-logged-in" id='jobs/newjob') Post a job
-        include ../partials/authModal.jade
+  div.container
+    div.top-bar
+      h1.page-title Welcome to the Job Board
+      //- div
+      a.post-job-button(id="add-job" href='/jobs/newjob') Post a job
+    div.job-postings
+      if loggedIn
+        //- div.homepage-link
+        //-   a(id="add-job" href='/jobs/newjob') Post a job
         if jobs 
           each job in jobs
             .new-job
               .left
                 a(href=job.source)
-                  h1= job.jobTitle
-                p= job.companyName
+                  h1= job.jobTitle  
+                br  
+                p= job.companyName  
               .right
-                p= job.location
-                p Date Posted
-                  = job.activation
-              .bottom
-                p= job.source
+                p= job.location  
                 br
-                button(class='description' onclick='toggleDescription()') Description
-                div#job
-                  = job.description
+                p Date Posted: 
+              .bottom
+                  p= job.source
+                  br
+                  button(class='description' onclick='toggleDescription()') vv Description vv
+                  div#job
+                    = job.description
+      else
+        div
+          p= userID
+          //- p.homepage-link(class="not-logged-in" id='jobs/newjob') Post a job
+          include ../partials/authModal.jade
+          if jobs 
+            each job in jobs
+              .new-job
+                .left
+                  a(href=job.source)
+                    h1= job.jobTitle
+                  p= job.companyName
+                .right
+                  p= job.location
+                  p Date Posted
+                    = job.activation
+                .bottom
+                  p= job.source
+                  br
+                  button(class='description' onclick='toggleDescription()') Description
+                  div#job
+                    = job.description
   script(src='../javascripts/login.js')
   script(src='../javascripts/dom.js')
