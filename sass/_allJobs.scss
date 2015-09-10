@@ -71,7 +71,7 @@
 	box-shadow: 8px 8px 5px #888888;
 
 	div {
-		display: inline-block;
+		// display: inline-block;
 		margin-right: 20px;
 		margin-left: 20px;
     margin-top: 10px;
@@ -111,9 +111,6 @@
 		clear: both;
 		display: block;
 		text-align: center;
-		div{
-			display: block;
-		}
 		.description {
       font-family: Abel;
       font-weight: bold;
@@ -129,14 +126,14 @@
 				cursor: pointer;
 			}
 		}
-		#job {
+	}
+  .job {
 			display: none;
 			padding: 15px;
 			text-align: left;
       background-color: rgba($white, .3);
       border-radius: 3px;
 		}
-	}
 }
 
 .job-postings {

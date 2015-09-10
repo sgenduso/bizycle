@@ -25,11 +25,11 @@ block content
                   =job.activation
               .bottom
                   br
-                  p(class='description' onclick='toggleDescription()')  
+                  p(class='description')  
                     i.fa-angle-double-down(class='fa fa-1x')
                     |&nbsp;Description 
                     i.fa-angle-double-down(class='fa fa-1x')
-                  div#job
+                  div.job
                     p= job.description
       else
         div
@@ -54,7 +54,7 @@ block content
                       i.fa-angle-double-down(class='fa fa-1x')
                       |&nbsp;Description 
                       i.fa-angle-double-down(class='fa fa-1x')
-                  div#job
+                  div.job
                     p= job.description
   script(src='../javascripts/login.js')
   script(src='../javascripts/dom.js')
