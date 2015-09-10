@@ -12,20 +12,20 @@ block content
        div.message
         div.posted
           p
-          Strong Posted By: 
-          =item.postedBy
+            Strong Posted By: 
+            =item.postedBy
           p=item.dateNew
         div.thumb
           span
           i.thumbs-up(class="fa fa-2x" id=item._id)
           span.liked
-          if(item.userId === userId)
-            form(action="/messages/"+item._id+"/delete" method="post")
-             input.delete(type='submit' value ="Delete Message")
         div.subject
           p
             Strong Subject: 
             =item.subject
+          if(item.userId === userId)
+            form(action="/messages/"+item._id+"/delete" method="post")
+             input.delete(type='submit' value ="Delete Message")
           p=item.body
         
         //- if userId
@@ -36,11 +36,9 @@ block content
         div
           input#close-msg-modal(type='button' value='X')
         div
-          label(for='subject') Subject
-          input(type='text', id='submit', name='subject' required)
+          input(type='text', id='submit', name='subject' placeholder='Subject' autofocus required)
         div
-          label(for='body') Message
-          textarea(id='body', name='message_body' required)
+          textarea(id='body', name='message_body' placeholder='Message Body' required)
         div
           input(type='submit' value='Post Message')
     script(src='javascripts/messageboard.js')

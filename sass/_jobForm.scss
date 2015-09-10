@@ -40,7 +40,6 @@ input[type="submit"]{
   &:hover{
   background-color: $darkGrey;
   color: $white;
-    // border: 2px solid $white;
   }
 }
 
@@ -71,12 +70,10 @@ input:focus, textarea:focus {
   color: $red;
   font-weight: bold;
   font-size: 1.1em;
-  // text-align: center;
   margin-bottom: 10px;
 }
 .form-p{
   font-size: 1.1em;
-  // font-weight: bold;
 }
 
 .form-title{
@@ -95,10 +92,8 @@ input:focus, textarea:focus {
   height: 100%;
   z-index: -1;
   background-image: url('../images/CoBBB-logo-bikes-only.png');
-  // background-image:
   background-position: bottom;
   background-repeat: repeat-x;
-  // overflow: hidden;
 }
 
 .subtle-background{
@@ -107,7 +102,4 @@ input:focus, textarea:focus {
   height: 100%;
   z-index: -2;
   background-image: url('../images/CoBBB-subtle.png');
-  // background-image:
-  // background-position: bottom;
-  // background-repeat: repeat-x;
 }
