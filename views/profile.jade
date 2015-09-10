@@ -2,37 +2,46 @@ extends layout
 block content
   div.subtle-background
   div.cover
-  h1#profile-heading.page-title Your Profile
-  div.delete-item
-    a(href='/profile/' + userId + '/delete') Delete Profile
-  if jobs
-    h1.page-subheader Jobs You've Posted
-    each job in jobs
-      div.post
-        div.job-info
-          h3.job-title
-            a(href='/job/'+ job._id + '/edit')= job.jobTitle
-          div.job-details
-            p.job-location= job.location
-            div.job-description
-              h4 Description:
-              p= job.description
-          div.delete-item
-            a(href='/job/' + job._id + '/delete') Delete
-  if posts
-    h1.page-subheader Messages You've Posted
-    each post in posts
-      div.post
-        a(href='/messages/'+post._id+"/delete") Delete Message
-        p
-        Strong Subject: 
-        = post.subject
-        p
-        Strong Body: 
-        = post.body
-        p
-        Strong Date Posted: 
-        = post.datePosted
-        p
-        Strong Number of Likes: 
-        = post.likedByUsers.length
+  div.container
+    h1#profile-heading.page-title Your Profile
+    div.delete-item
+      a#delete-profile(href='/profile/' + userId + '/delete') Delete Profile
+    if jobs
+      div.your-jobs
+        h1.page-subheader Jobs You've Posted
+        each job in jobs
+          div.new-job.my-job
+            div.job-info
+              h3.job-title
+                a(href='/job/'+ job._id + '/edit')= job.jobTitle
+              //- div.job-details
+              p= job.companyName
+              p.job-location= job.location
+              //- p Date Posted: 
+              //-   =job.datePosted
+              //- div.job-description
+              //-   h4 Description:
+              //-   p= job.description
+              div.delete-item
+                a(href='/job/'+ job._id + '/edit') Edit
+                |&nbsp;&nbsp;&nbsp;&nbsp;  
+                a(href='/job/' + job._id + '/delete') Delete
+    if posts
+      div.your-messages
+        h1.page-subheader Messages You've Posted
+        each post in posts
+          div.new-job.my-message
+            p
+              Strong Subject: 
+              = post.subject
+            p
+              Strong Body: 
+              = post.body
+            //- p
+            //- Strong Date Posted: 
+            //- = post.datePosted
+            p
+              Strong Number of Likes: 
+              = post.likedByUsers.length
+            p
+              a(href='/messages/'+post._id+"/delete") Delete

@@ -6,7 +6,7 @@ block content
   div.container
     div.top-bar
       h1.page-title Welcome to the Job Board
-      a.post-thing-button(id="add-job" href='/jobs/newjob') Post a job
+      a.post-thing-button(id="add-job" href='/jobs/newjob') Post a job   
     div.job-postings
       if loggedIn
         //- div.homepage-link
@@ -25,7 +25,10 @@ block content
                   =job.activation
               .bottom
                   br
-                  p(class='description' onclick='toggleDescription()') vv Description vv
+                  p(class='description' onclick='toggleDescription()')  
+                    i.fa-angle-double-down(class='fa fa-1x')
+                    |&nbsp;Description 
+                    i.fa-angle-double-down(class='fa fa-1x')
                   div#job
                     p= job.description
       else
@@ -47,7 +50,10 @@ block content
                     =job.activation
                 .bottom
                     br
-                    p(class='description' onclick='toggleDescription()') vv Description vv
+                    p(class='description' onclick='toggleDescription()')
+                      i.fa-angle-double-down(class='fa fa-1x')
+                      |&nbsp;Description 
+                      i.fa-angle-double-down(class='fa fa-1x')
                   div#job
                     p= job.description
   script(src='../javascripts/login.js')

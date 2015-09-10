@@ -28,6 +28,10 @@ html
             a(href='/jobs/alljobs') Job Board 
             &nbsp;&nbsp;|  
             a(href='/messages') Message Board
+            if userId
+              &nbsp;&nbsp;|  
+              a(href='/profile') Profile
+              
             
       block content
       script(src='javascripts/login.js')

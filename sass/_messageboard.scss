@@ -14,6 +14,11 @@
 	text-align: left;
   box-shadow: 8px 8px 5px #888888;
   background-color: rgba($blue, .95);
+
+  .delete{
+    
+  }
+
 }
 
 .thumb{
@@ -35,6 +40,10 @@
   display: inline-block;
   float: left;
   top:0px;
+  p:last-of-type{
+    font-size: .9em;
+    margin-top: 1 px;
+  }
   // margin: 10px;
   // width: 100%;
   // border: 2px solid green;
@@ -49,4 +58,15 @@
     // color: red;
     margin-bottom: 10px;
   }
+  p:last-of-type{
+    background-color: rgba($lightGrey, .9);
+    padding: 15px;
+    border-radius: 3px;
+    // background-image: url("../images/CoBBB-subtle.png");
+  }
 }
+
+// .fa-paper-plane{
+//   float: right;
+//   margin-right: 20px;
+// }

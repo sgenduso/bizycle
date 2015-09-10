@@ -302,53 +302,46 @@ h1 {
   z-index: -2;
   background-image: url("../images/CoBBB-subtle.png"); }
 
-#profile-heading {
-  margin-top: 80px; }
+.your-jobs {
+  margin-top: 20px;
+  display: inline-block;
+  width: 45%;
+  float: left;
+  margin-left: 20px; }
+
+.your-messages {
+  margin-top: 20px;
+  display: inline-block;
+  width: 45%;
+  float: right;
+  margin-right: 20px; }
+
+.my-message {
+  text-align: left;
+  display: inline-block; }
+  .my-message p {
+    margin-bottom: 5px; }
+  .my-message p:first-of-type {
+    font-size: 1.2em; }
+  .my-message p:last-of-type {
+    float: right;
+    vertical-align: top; }
 
 .page-subheader {
-  font-size: 25px;
-  margin-top: 40px;
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
-.post {
-  width: 60%;
-  margin: 0 auto;
-  padding: 2%;
-  border-radius: 4px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); }
-  .post .job-info .job-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-    float: left; }
-  .post .job-info .job-details {
-    clear: left;
-    text-align: left; }
-    .post .job-info .job-details .job-location {
-      font-weight: bold;
-      margin-bottom: 5px;
-      padding-top: 5px;
-      padding-bottom: 5px; }
-    .post .job-info .job-details .job-description {
-      padding-top: 10px;
-      padding-bottom: 10px; }
-      .post .job-info .job-details .job-description h4 {
-        display: inline-block;
-        margin-right: 1%;
-        font-weight: bold; }
-      .post .job-info .job-details .job-description p {
-        display: inline-block; }
-
-.delete-item {
-  margin-top: 10px;
-  display: inline-block; }
-  .delete-item a:link {
-    text-decoration: none; }
-  .delete-item a:visited {
-    text-decoration: none; }
-  .delete-item a:active {
-    text-decoration: none;
-    position: relative;
-    top: 1px; }
+#delete-profile {
+  padding: 6px;
+  border-radius: 5px;
+  color: #DF2425;
+  background-color: #F7F6F6;
+  border: 2px solid #DF2425;
+  text-decoration: none; }
+  #delete-profile:hover {
+    color: #F7F6F6;
+    background-color: #DF2425; }
+  #delete-profile:visited {
+    color: #DF2425; }
 
 .page-title {
   margin-bottom: 20px; }
@@ -460,6 +453,9 @@ h1 {
   display: inline-block;
   float: left;
   top: 0px; }
+  .posted p:last-of-type {
+    font-size: .9em;
+    margin-top: 1 px; }
 
 .subject {
   clear: both;
@@ -467,5 +463,9 @@ h1 {
   .subject p:first-of-type {
     font-size: 1.2em;
     margin-bottom: 10px; }
+  .subject p:last-of-type {
+    background-color: rgba(248, 247, 247, 0.9);
+    padding: 15px;
+    border-radius: 3px; }
 
 /*# sourceMappingURL=style.css.map */
