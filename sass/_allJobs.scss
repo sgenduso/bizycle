@@ -1,33 +1,6 @@
 .page-title {
-  // font-size: 50px;
-  // margin-top: 50px;
   margin-bottom: 20px;
-  // padding-top: 30px;
-  // border: 3px solid red;
 }
-
-// .homepage-link-top {
-//   // display: inline-block;
-//   // float: left;
-//   margin: 10px;
-//   border-radius: 5px;
-//   padding: 10px;
-//   border: 4px solid $darkGrey;
-//   background-color: $blue;
-//   color: $darkGrey;
-// 	text-decoration: none;
-// 	margin-top: 80px;
-//
-// 	a{
-// 		text-decoration: none;
-// 		color: $darkGrey;
-// 		text-align: center;
-// 		&:hover{
-// 			color: $yellow;
-// 			pointer: hand;
-// 		}
-// 	}
-// }
 
 .post-thing-button{
   display: inline-block;
@@ -71,7 +44,6 @@
 	box-shadow: 8px 8px 5px #888888;
 
 	div {
-		// display: inline-block;
 		margin-right: 20px;
 		margin-left: 20px;
     margin-top: 10px;
@@ -115,14 +87,8 @@
       font-family: Abel;
       font-weight: bold;
       font-size: 1.1em;
-			// width: 100%;
-      // height: 35px;
       border-radius: 5px;
 			&:hover{
-				// background: $lightGrey;
-				// color: white;
-				// padding: 8px;
-				// border-radius: 8px;
 				cursor: pointer;
 			}
 		}

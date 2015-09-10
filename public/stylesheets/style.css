@@ -305,21 +305,26 @@ h1 {
 
 .your-jobs {
   margin-top: 20px;
+  margin-bottom: 20px;
   display: inline-block;
   width: 45%;
   float: left;
-  margin-left: 20px; }
+  margin-left: 20px;
+  max-height: 40%; }
 
 .your-messages {
   margin-top: 20px;
+  margin-bottom: 20px;
   display: inline-block;
   width: 45%;
   float: right;
-  margin-right: 20px; }
+  margin-right: 20px;
+  max-height: 40%; }
 
 .my-message {
   text-align: left;
   display: inline-block;
+  width: 100%;
   vertical-align: top; }
   .my-message p {
     margin-bottom: 5px; }
@@ -327,6 +332,9 @@ h1 {
     font-size: 1.2em; }
   .my-message p:last-of-type {
     float: right; }
+
+.new-job.my-job, .new-job.my-message {
+  width: 90%; }
 
 .page-subheader {
   margin-bottom: 10px; }

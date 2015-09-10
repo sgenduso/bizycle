@@ -28,9 +28,6 @@ block content
              input.delete(type='submit' value ="Delete Message")
           p=item.body
         
-        //- if userId
-        //- div.likes
-        
     dialog#new-msg-modal
       form(action='/messages' method='post')
         div
@@ -38,7 +35,7 @@ block content
         div
           input(type='text', id='submit', name='subject' placeholder='Subject' autofocus required)
         div
-          textarea(id='body', name='message_body' placeholder='Message Body' required)
+          textarea(id='body', name='message_body' placeholder='Body' required)
         div
           input(type='submit' value='Post Message')
     script(src='javascripts/messageboard.js')

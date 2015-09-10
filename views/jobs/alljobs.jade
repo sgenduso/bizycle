@@ -9,8 +9,6 @@ block content
       a.post-thing-button(id="add-job" href='/jobs/newjob') Post a job   
     div.job-postings
       if loggedIn
-        //- div.homepage-link
-        //-   a(id="add-job" href='/jobs/newjob') Post a job
         if jobs 
           each job in jobs
             .new-job
@@ -34,7 +32,6 @@ block content
       else
         div
           p= userID
-          //- p.homepage-link(class="not-logged-in" id='jobs/newjob') Post a job
           include ../partials/authModal.jade
           if jobs 
             each job in jobs
