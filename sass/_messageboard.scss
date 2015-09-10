@@ -2,28 +2,41 @@
   border: 1px solid black;
   display: inline-block;
   //width: 300px;
-  margin:20px;
+  // margin:20px;
 	text-align: left;
 	border: solid black 1px;
 	border-radius: 3px;
-	padding: 10px;
+	padding: 15px;
 	width: 60%;
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	text-align: left;
-}
-.thumb{
-  float:left;
+  box-shadow: 8px 8px 5px #888888;
+  background-color: rgba($blue, .95);
 }
 
-.likes{
-  margin-left: 70px;
+.thumb{
+  display: inline-block;
+  float:right;
+  border: 2px solid $red;
 }
+
+.thumbs-up{
+  margin-right: 10px;
+}
+
+// .likes{
+//   display: inline-block;
+//   margin-left: 70px;
+// }
 
 .posted{
+  display: inline-block;
+  float: left;
   top:0px;
   margin: 10px;
-  width: 100%;
+  // width: 100%;
+  border: 2px solid green;
 
 }

@@ -4,8 +4,8 @@ block content
   div.subtle-background
   div.cover
   div.container
-    h1 Welcome to the Message Board
-    p#post-msg Post Message to Board
+    h1.page-title Welcome to the Message Board
+    p.post-thing-button#post-msg Post a Message
     if(messages)
       for item in messages
        div.message
@@ -18,17 +18,17 @@ block content
           =item.postedBy
           p=item.dateNew
         div.thumb
-          p
+          span
           i.thumbs-up(class="fa fa-2x" id=item._id)
-          p.liked
+          span.liked
         div.subject
           p
           Strong Subject: 
           =item.subject
           p=item.body
         
-        if userId
-        div.likes
+        //- if userId
+        //- div.likes
         
     dialog#new-msg-modal
       form(action='/messages' method='post')

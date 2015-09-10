@@ -167,7 +167,8 @@ body {
   height: 65%; }
 
 .container {
-  margin-top: 100px; }
+  margin-top: 100px;
+  margin-bottom: 20px; }
 
 strong {
   font-weight: bolder; }
@@ -352,7 +353,7 @@ h1 {
 .page-title {
   margin-bottom: 20px; }
 
-.post-job-button {
+.post-thing-button {
   display: inline-block;
   height: 45px;
   width: 60%;
@@ -366,12 +367,13 @@ h1 {
   text-decoration: none;
   background-color: rgba(74, 75, 78, 0.2);
   color: #4A4B4E; }
-  .post-job-button:hover {
+  .post-thing-button:hover {
     background-color: #4A4B4E;
-    color: #F7F6F6; }
-    .post-job-button:hover:visited {
+    color: #F7F6F6;
+    cursor: pointer; }
+    .post-thing-button:hover:visited {
       color: #F7F6F6; }
-  .post-job-button:visited {
+  .post-thing-button:visited {
     color: #4A4B4E; }
 
 .new-job {
@@ -435,24 +437,29 @@ h1 {
 .message {
   border: 1px solid black;
   display: inline-block;
-  margin: 20px;
   text-align: left;
   border: solid black 1px;
   border-radius: 3px;
-  padding: 10px;
+  padding: 15px;
   width: 60%;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  text-align: left; }
+  text-align: left;
+  box-shadow: 8px 8px 5px #888888;
+  background-color: rgba(126, 204, 233, 0.95); }
 
 .thumb {
-  float: left; }
+  display: inline-block;
+  float: right;
+  border: 2px solid #DF2425; }
 
-.likes {
-  margin-left: 70px; }
+.thumbs-up {
+  margin-right: 10px; }
 
 .posted {
+  display: inline-block;
+  float: left;
   top: 0px;
   margin: 10px;
-  width: 100%; }
+  border: 2px solid green; }
