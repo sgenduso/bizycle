@@ -451,8 +451,7 @@ h1 {
 
 .thumb {
   display: inline-block;
-  float: right;
-  border: 2px solid #DF2425; }
+  float: right; }
 
 .thumbs-up {
   margin-right: 10px; }
@@ -460,6 +459,13 @@ h1 {
 .posted {
   display: inline-block;
   float: left;
-  top: 0px;
-  margin: 10px;
-  border: 2px solid green; }
+  top: 0px; }
+
+.subject {
+  clear: both;
+  margin-top: 50px; }
+  .subject p:first-of-type {
+    font-size: 1.2em;
+    margin-bottom: 10px; }
+
+/*# sourceMappingURL=style.css.map */

@@ -19,7 +19,7 @@
 .thumb{
   display: inline-block;
   float:right;
-  border: 2px solid $red;
+  // border: 2px solid $red;
 }
 
 .thumbs-up{
@@ -35,8 +35,18 @@
   display: inline-block;
   float: left;
   top:0px;
-  margin: 10px;
+  // margin: 10px;
   // width: 100%;
-  border: 2px solid green;
+  // border: 2px solid green;
 
+}
+
+.subject{
+  clear: both;
+  margin-top: 50px;
+  p:first-of-type{
+    font-size: 1.2em;
+    // color: red;
+    margin-bottom: 10px;
+  }
 }
