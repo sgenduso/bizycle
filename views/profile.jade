@@ -6,7 +6,7 @@ block content
   div.delete-item
     a(href='/profile/' + userId + '/delete') Delete Profile
   if jobs
-    h1.page-subheader Your Jobs
+    h1.page-subheader Jobs You've Posted
     each job in jobs
       div.post
         div.job-info
@@ -20,7 +20,7 @@ block content
           div.delete-item
             a(href='/job/' + job._id + '/delete') Delete
   if posts
-    h1.page-subheader Your Messages
+    h1.page-subheader Messages You've Posted
     each post in posts
       div.post
         a(href='/messages/'+post._id+"/delete") Delete Message

@@ -344,39 +344,6 @@ h1 {
     text-decoration: none; }
   .delete-item a:visited {
     text-decoration: none; }
-  .delete-item a {
-    -moz-box-shadow: inset 0px 1px 0px 0px #cf866c;
-    -webkit-box-shadow: inset 0px 1px 0px 0px #cf866c;
-    box-shadow: inset 0px 1px 0px 0px #cf866c;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff3b05), color-stop(1, #bc3315));
-    background: -moz-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
-    background: -webkit-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
-    background: -o-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
-    background: -ms-linear-gradient(top, #ff3b05 5%, #bc3315 100%);
-    background: linear-gradient(to bottom, #ff3b05 5%, #bc3315 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b05', endColorstr='#bc3315',GradientType=0);
-    background-color: #ff3b05;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: 1px solid #942911;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 15px;
-    padding: 6px 24px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #854629; }
-  .delete-item a:hover {
-    text-decoration: none;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bc3315), color-stop(1, #ff3b05));
-    background: -moz-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
-    background: -webkit-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
-    background: -o-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
-    background: -ms-linear-gradient(top, #bc3315 5%, #ff3b05 100%);
-    background: linear-gradient(to bottom, #bc3315 5%, #ff3b05 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bc3315', endColorstr='#ff3b05',GradientType=0);
-    background-color: #bc3315; }
   .delete-item a:active {
     text-decoration: none;
     position: relative;
@@ -397,7 +364,7 @@ h1 {
   border: 2px solid #4A4B4E;
   border-radius: 5px;
   text-decoration: none;
-  background-color: #F7F6F6;
+  background-color: rgba(74, 75, 78, 0.2);
   color: #4A4B4E; }
   .post-job-button:hover {
     background-color: #4A4B4E;
@@ -415,13 +382,14 @@ h1 {
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  text-align: left;
   background-color: rgba(126, 204, 233, 0.95);
   color: #4A4B4E;
   box-shadow: 8px 8px 5px #888888; }
   .new-job div {
     display: inline-block;
-    margin-right: 20px; }
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 10px; }
   .new-job a {
     color: #4A4B4E;
     font-size: 25px;
@@ -431,9 +399,16 @@ h1 {
   .new-job .location {
     margin-left: 100px; }
   .new-job .left {
-    float: left; }
+    float: left;
+    text-align: left; }
+    .new-job .left h2 {
+      margin-bottom: 5px; }
   .new-job .right {
-    float: right; }
+    margin-top: 4px;
+    float: right;
+    text-align: right; }
+    .new-job .right p:first-child {
+      margin-bottom: 6px; }
   .new-job .bottom {
     clear: both;
     display: block;
@@ -442,18 +417,17 @@ h1 {
       display: block; }
     .new-job .bottom .description {
       font-family: Abel;
-      font-size: 1em;
-      width: 100%;
-      height: 50px; }
+      font-weight: bold;
+      font-size: 1.1em;
+      border-radius: 5px; }
       .new-job .bottom .description:hover {
-        background: rgba(74, 75, 78, 0.5);
-        color: white;
-        border-radius: 8px;
-        pointer: hand; }
+        cursor: pointer; }
     .new-job .bottom #job {
       display: none;
-      padding-top: 15px;
-      text-align: left; }
+      padding: 15px;
+      text-align: left;
+      background-color: rgba(247, 246, 246, 0.3);
+      border-radius: 3px; }
 
 .job-postings {
   margin-bottom: 100px; }

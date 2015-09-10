@@ -6,7 +6,6 @@ block content
   div.container
     div.top-bar
       h1.page-title Welcome to the Job Board
-      //- div
       a.post-job-button(id="add-job" href='/jobs/newjob') Post a job
     div.job-postings
       if loggedIn
@@ -16,20 +15,19 @@ block content
           each job in jobs
             .new-job
               .left
-                a(href=job.source)
-                  h1= job.jobTitle  
-                br  
+                p
+                  a(href=job.source)
+                    h2= job.jobTitle  
                 p= job.companyName  
               .right
                 p= job.location  
-                br
                 p Date Posted: 
+                  =job.activation
               .bottom
-                  p= job.source
                   br
-                  button(class='description' onclick='toggleDescription()') vv Description vv
+                  p(class='description' onclick='toggleDescription()') vv Description vv
                   div#job
-                    = job.description
+                    p= job.description
       else
         div
           p= userID
@@ -39,18 +37,18 @@ block content
             each job in jobs
               .new-job
                 .left
-                  a(href=job.source)
-                    h1= job.jobTitle
-                  p= job.companyName
+                  p
+                    a(href=job.source)
+                      h2= job.jobTitle  
+                  p= job.companyName  
                 .right
-                  p= job.location
-                  p Date Posted
-                    = job.activation
+                  p= job.location  
+                  p Date Posted: 
+                    =job.activation
                 .bottom
-                  p= job.source
-                  br
-                  button(class='description' onclick='toggleDescription()') Description
+                    br
+                    p(class='description' onclick='toggleDescription()') vv Description vv
                   div#job
-                    = job.description
+                    p= job.description
   script(src='../javascripts/login.js')
   script(src='../javascripts/dom.js')
