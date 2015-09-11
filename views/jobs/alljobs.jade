@@ -6,9 +6,9 @@ block content
   div.container
     div.top-bar
       h1.page-title Welcome to the Job Board
-      a.post-thing-button(id="add-job" href='/jobs/newjob') Post a job   
     div.job-postings
       if loggedIn
+        a.post-thing-button(id="add-job" href='/jobs/newjob') Post a job   
         //- div.homepage-link
         //-   a(id="add-job" href='/jobs/newjob') Post a job
         if jobs 
@@ -34,7 +34,7 @@ block content
       else
         div
           p= userID
-          //- p.homepage-link(class="not-logged-in" id='jobs/newjob') Post a job
+          p.post-thing-button(class="not-logged-in" id='jobs/newjob') Post a job
           include ../partials/authModal.jade
           if jobs 
             each job in jobs

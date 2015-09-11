@@ -5,29 +5,53 @@ block content
   div.cover
   div.container
     h1.page-title Welcome to the Message Board
-    p.post-thing-button#post-msg Post a Message   
-      i.fa-paper-plane(class='fa fa-1x')
-    if(messages)
-      for item in messages
-       div.message
-        div.posted
-          p
-          Strong Posted By: 
-          =item.postedBy
-          p=item.dateNew
-        div.thumb
-          span
-          i.thumbs-up(class="fa fa-2x" id=item._id)
-          span.liked
-          if(item.userId === userId)
-            form(action="/messages/"+item._id+"/delete" method="post")
-             input.delete(type='submit' value ="Delete Message")
-        div.subject
-          p
-            Strong Subject: 
-            =item.subject
-          p=item.body
-        
+  
+    if loggedIn  
+      p.post-thing-button#post-msg Post a Message   
+        i.fa-paper-plane(class='fa fa-1x')
+      if(messages)
+        for item in messages
+         div.message
+          div.posted
+            p
+            Strong Posted By: 
+            =item.postedBy
+            p=item.dateNew
+          div.thumb
+            span
+            i.thumbs-up(class="fa fa-2x" id=item._id)
+            span.liked
+            if(item.userId === userId)
+              form(action="/messages/"+item._id+"/delete" method="post")
+               input.delete(type='submit' value ="Delete Message")
+          div.subject
+            p
+              Strong Subject: 
+              =item.subject
+            p=item.body
+    else    
+      p.post-thing-button(class="not-logged-in") Post a Message   
+        i.fa-paper-plane(class='fa fa-1x')
+      if(messages)
+        for item in messages
+         div.message
+          div.posted
+            p
+            Strong Posted By: 
+            =item.postedBy
+            p=item.dateNew
+          div.thumb
+            span
+            i.thumbs-up(class="fa fa-2x" id=item._id)
+            span.liked
+            if(item.userId === userId)
+              form(action="/messages/"+item._id+"/delete" method="post")
+               input.delete(type='submit' value ="Delete Message")
+          div.subject
+            p
+              Strong Subject: 
+              =item.subject
+            p=item.body
         //- if userId
         //- div.likes
         
