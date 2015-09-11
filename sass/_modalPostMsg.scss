@@ -1,0 +1,50 @@
+#new-msg-modal{
+  width: 30%;
+  background-color: $white;
+  border-radius: 5px;
+  border: solid $darkGrey 5px;
+
+  input[type='text'], textarea{
+    border-radius: 5px;
+    font-family: Abel;
+    font-size: 1.2em;
+    width: 100%;
+    margin-bottom: 10px;
+    &:focus{
+      outline: 0;
+      box-shadow: 0 0 5px rgba($darkGrey, 1);
+      border: 2px solid rgba($darkGrey, 1);
+    }
+  }
+  textarea{
+    height: 200px;
+  }
+  input[type='submit']{
+    width: 100%;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Abel;
+    border: 2px solid $darkGrey;
+    border-radius: 3px;
+    background-color: $white;
+    color: $darkGrey;
+
+    &:hover{
+    background-color: $darkGrey;
+    color: $white;
+    }
+  }
+  #close-msg-modal{
+    display: inline-block;
+    float: right;
+    border: 2px solid $red;
+    border-radius: 3px;
+      color: $white;
+      background-color: $red;
+    margin-bottom: 5px;
+    &:hover{
+    color: $red;
+    background-color: $white;
+    }
+  }
+}

@@ -83,7 +83,8 @@ table {
   border: 4px solid #4A4B4E;
   background-color: #7ECCE9;
   color: #4A4B4E;
-  text-decoration: none; }
+  text-decoration: none;
+  box-shadow: 8px 8px 5px #888888; }
   .homepage-link:hover {
     background-color: #B5C496;
     position: relative;
@@ -304,28 +305,36 @@ h1 {
 
 .your-jobs {
   margin-top: 20px;
+  margin-bottom: 20px;
   display: inline-block;
   width: 45%;
   float: left;
-  margin-left: 20px; }
+  margin-left: 20px;
+  max-height: 40%; }
 
 .your-messages {
   margin-top: 20px;
+  margin-bottom: 20px;
   display: inline-block;
   width: 45%;
   float: right;
-  margin-right: 20px; }
+  margin-right: 20px;
+  max-height: 40%; }
 
 .my-message {
   text-align: left;
-  display: inline-block; }
+  display: inline-block;
+  width: 100%;
+  vertical-align: top; }
   .my-message p {
     margin-bottom: 5px; }
   .my-message p:first-of-type {
     font-size: 1.2em; }
   .my-message p:last-of-type {
-    float: right;
-    vertical-align: top; }
+    float: right; }
+
+.new-job.my-job, .new-job.my-message {
+  width: 90%; }
 
 .page-subheader {
   margin-bottom: 10px; }
@@ -340,8 +349,6 @@ h1 {
   #delete-profile:hover {
     color: #F7F6F6;
     background-color: #DF2425; }
-  #delete-profile:visited {
-    color: #DF2425; }
 
 .page-title {
   margin-bottom: 20px; }
@@ -418,7 +425,6 @@ h1 {
     display: none;
     padding: 15px;
     text-align: left;
-    color: yellow;
     background-color: rgba(247, 246, 246, 0.3);
     border-radius: 3px; }
 
@@ -439,6 +445,17 @@ h1 {
   text-align: left;
   box-shadow: 8px 8px 5px #888888;
   background-color: rgba(126, 204, 233, 0.95); }
+  .message .delete {
+    font-family: Abel;
+    font-size: .9em;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #DF2425;
+    background: none;
+    border: none;
+    text-decoration: none; }
+    .message .delete:hover {
+      cursor: pointer; }
 
 .thumb {
   display: inline-block;
@@ -460,8 +477,55 @@ h1 {
   margin-top: 50px; }
   .subject p:first-of-type {
     font-size: 1.2em;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    display: inline-block; }
   .subject p:last-of-type {
     background-color: rgba(248, 247, 247, 0.9);
     padding: 15px;
     border-radius: 3px; }
+  .subject form {
+    display: inline-block;
+    float: right; }
+
+#new-msg-modal {
+  width: 30%;
+  background-color: #F7F6F6;
+  border-radius: 5px;
+  border: solid #4A4B4E 5px; }
+  #new-msg-modal input[type='text'], #new-msg-modal textarea {
+    border-radius: 5px;
+    font-family: Abel;
+    font-size: 1.2em;
+    width: 100%;
+    margin-bottom: 10px; }
+    #new-msg-modal input[type='text']:focus, #new-msg-modal textarea:focus {
+      outline: 0;
+      box-shadow: 0 0 5px #4a4b4e;
+      border: 2px solid #4a4b4e; }
+  #new-msg-modal textarea {
+    height: 200px; }
+  #new-msg-modal input[type='submit'] {
+    width: 100%;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Abel;
+    border: 2px solid #4A4B4E;
+    border-radius: 3px;
+    background-color: #F7F6F6;
+    color: #4A4B4E; }
+    #new-msg-modal input[type='submit']:hover {
+      background-color: #4A4B4E;
+      color: #F7F6F6; }
+  #new-msg-modal #close-msg-modal {
+    display: inline-block;
+    float: right;
+    border: 2px solid #DF2425;
+    border-radius: 3px;
+    color: #F7F6F6;
+    background-color: #DF2425;
+    margin-bottom: 5px; }
+    #new-msg-modal #close-msg-modal:hover {
+      color: #DF2425;
+      background-color: #F7F6F6; }
+
+/*# sourceMappingURL=style.css.map */

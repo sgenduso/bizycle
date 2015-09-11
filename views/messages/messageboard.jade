@@ -52,19 +52,37 @@ block content
               Strong Subject: 
               =item.subject
             p=item.body
-        //- if userId
-        //- div.likes
+    p.post-thing-button#post-msg Post a Message   
+      i.fa-paper-plane(class='fa fa-1x')
+    if(messages)
+      for item in messages
+       div.message
+        div.posted
+          p
+            Strong Posted By: 
+            =item.postedBy
+          p=item.dateNew
+        div.thumb
+          span
+          i.thumbs-up(class="fa fa-2x" id=item._id)
+          span.liked
+        div.subject
+          p
+            Strong Subject: 
+            =item.subject
+          if(item.userId === userId)
+            form(action="/messages/"+item._id+"/delete" method="post")
+             input.delete(type='submit' value ="Delete Message")
+          p=item.body
         
     dialog#new-msg-modal
       form(action='/messages' method='post')
         div
           input#close-msg-modal(type='button' value='X')
         div
-          label(for='subject') Subject
-          input(type='text', id='submit', name='subject' required)
+          input(type='text', id='submit', name='subject' placeholder='Subject' autofocus required)
         div
-          label(for='body') Message
-          textarea(id='body', name='message_body' required)
+          textarea(id='body', name='message_body' placeholder='Body' required)
         div
           input(type='submit' value='Post Message')
     script(src='javascripts/messageboard.js')

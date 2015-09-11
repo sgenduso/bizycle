@@ -1,8 +1,6 @@
 .message{
   border: 1px solid black;
   display: inline-block;
-  //width: 300px;
-  // margin:20px;
 	text-align: left;
 	border: solid black 1px;
 	border-radius: 3px;
@@ -15,8 +13,19 @@
   box-shadow: 8px 8px 5px #888888;
   background-color: rgba($blue, .95);
 
+
   .delete{
-    
+    font-family: Abel;
+    font-size: .9em;
+    font-weight: bold;
+    border-radius: 5px;
+    color: $red;
+    background: none;
+    border: none;
+    text-decoration: none;
+    &:hover{
+      cursor: pointer;
+    }
   }
 
 }
@@ -24,17 +33,12 @@
 .thumb{
   display: inline-block;
   float:right;
-  // border: 2px solid $red;
 }
 
 .thumbs-up{
   margin-right: 10px;
 }
 
-// .likes{
-//   display: inline-block;
-//   margin-left: 70px;
-// }
 
 .posted{
   display: inline-block;
@@ -44,9 +48,6 @@
     font-size: .9em;
     margin-top: 1 px;
   }
-  // margin: 10px;
-  // width: 100%;
-  // border: 2px solid green;
 
 }
 
@@ -55,18 +56,17 @@
   margin-top: 50px;
   p:first-of-type{
     font-size: 1.2em;
-    // color: red;
     margin-bottom: 10px;
+    display: inline-block;
   }
   p:last-of-type{
     background-color: rgba($lightGrey, .9);
     padding: 15px;
     border-radius: 3px;
-    // background-image: url("../images/CoBBB-subtle.png");
   }
-}
+  form{
+    display: inline-block;
+    float: right;
+  }
 
-// .fa-paper-plane{
-//   float: right;
-//   margin-right: 20px;
-// }
+}

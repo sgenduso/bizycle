@@ -14,14 +14,8 @@ block content
             div.job-info
               h3.job-title
                 a(href='/jobs/'+ job._id + '/edit')= job.jobTitle
-              //- div.job-details
               p= job.companyName
               p.job-location= job.location
-              //- p Date Posted: 
-              //-   =job.datePosted
-              //- div.job-description
-              //-   h4 Description:
-              //-   p= job.description
               div.delete-item
                 a(href='/jobs/'+ job._id + '/edit') Edit
                 |&nbsp;&nbsp;&nbsp;&nbsp;  
@@ -37,9 +31,6 @@ block content
             p
               Strong Body: 
               = post.body
-            //- p
-            //- Strong Date Posted: 
-            //- = post.datePosted
             p
               Strong Number of Likes: 
               = post.likedByUsers.length

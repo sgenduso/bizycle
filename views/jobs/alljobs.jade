@@ -9,8 +9,6 @@ block content
     div.job-postings
       if loggedIn
         a.post-thing-button(id="add-job" href='/jobs/newjob') Post a job   
-        //- div.homepage-link
-        //-   a(id="add-job" href='/jobs/newjob') Post a job
         if jobs 
           each job in jobs
             .new-job
