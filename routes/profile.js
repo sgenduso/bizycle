@@ -25,21 +25,21 @@ router.get('/profile', function (req, res, next) {
   });
 });
 
-router.get('/job/:id/edit', function (req, res, next) {
-  databaseQueries.findOneJob(req.params.id);
-    res.render('job/edit', {job: job});
+router.get('/jobs/:id/edit', function (req, res, next) {
+  databaseQueries.findOneJob(req.params.id).then(function (job) {
+    res.render('jobs/edit', {job: job});
 
-
+  })
 });
 
-router.post('/job/:id/edit', function (req, res, next) {
+router.post('/jobs/:id/edit', function (req, res, next) {
   databaseQueries.updateJob(req.params.id, req.body)
   .then(function () {
     res.redirect('/profile');
   });
 });
 
-router.get('/job/:id/delete', function (req, res, next) {
+router.get('/jobs/:id/delete', function (req, res, next) {
   databaseQueries.deleteJob(req.params.id)
   .then(function () {
     console.log("deleted sucessfully");

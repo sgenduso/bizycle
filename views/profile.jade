@@ -13,7 +13,7 @@ block content
           div.new-job.my-job
             div.job-info
               h3.job-title
-                a(href='/job/'+ job._id + '/edit')= job.jobTitle
+                a(href='/jobs/'+ job._id + '/edit')= job.jobTitle
               //- div.job-details
               p= job.companyName
               p.job-location= job.location
@@ -23,9 +23,9 @@ block content
               //-   h4 Description:
               //-   p= job.description
               div.delete-item
-                a(href='/job/'+ job._id + '/edit') Edit
+                a(href='/jobs/'+ job._id + '/edit') Edit
                 |&nbsp;&nbsp;&nbsp;&nbsp;  
-                a(href='/job/' + job._id + '/delete') Delete
+                a(href='/jobs/' + job._id + '/delete') Delete
     if posts
       div.your-messages
         h1.page-subheader Messages You've Posted
