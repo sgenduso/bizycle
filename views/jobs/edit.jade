@@ -1,32 +1,42 @@
 extends ../layout
 block content
-  h1 Edit Job 
-  form(action="/job/"+job._id+"/edit", method="post")
-   label(for="title") Job Title 
-   input(type="text" id="title" name="jobTitle" placeholder="Job Title" value= job.jobTitle) 
-   p
-   label(for="company") Company Name
-   input(type="text" id="company" name="companyName" placeholder='Company Name' value= job.companyName)
-   p
-   label(for="location") Job Location 
-   input(type="text" id="location" name="location" placeholder="City, State" value= job.location)
-   p
-   label(for="experience") Experience 
-   textarea(type="text" id="experience" name="requirements" placeholder='Experience') Testing this
-   p
-   label(for="description") Job Description 
-   textarea(type="text" name='description' placeholder='Job Description')= job.description 
-   p
-   label(for="expiry") Expiration Date
-   input(type="date" id="expiry" name="expiryDate" value= job.expiryDate)
-   p
-   label(for="activate") Activation Date
-   input(type="date" id="activate" name="datePosted" value= job.datePosted)
-   p
-   label(for='contact') Contact Information
-   textarea(type='text' id='contactInfo' name='contact')= job.contactInfo
-   p
-   label(for="source") Job Link
-   input(type="text" id="source" name="source" placeholder='Job URL' value= job.source)
-   p
-   input(type="submit" value="Update Job")
+  h1 Edit Job
+  div.subtle-background
+  div.cover
+  form#edit-job-form(action="/job/"+job._id+"/edit", method="post")
+    if errors
+      ol.errors
+        each err in errors
+          li= err
+    p.form-title Enter job information below:
+    input(type="text" id="title" name="title" placeholder="Job Title" autofocus value= job.jobTitle)
+    p
+    input(type="text" id="company" name="company" placeholder='Company Name' value= job.companyName)
+    p
+    input(type="text" id="location" name="location" placeholder="Location (i.e. City, State)" value= job.location)
+    p
+    textarea(type="text" id="description" name="description" placeholder='Job Description' )= job.description
+    p
+    textarea(type="text" id="experience" name="experience" placeholder='Qualifications/Experience')= job.experience
+    //- div#dynamicInput
+    //-   label(for="requirements") Requirements
+    //-   input(type="text" name="myInputs[]")
+    //- p
+    //- input(type="button" value="Add Requirement" onClick="addRequirement()")
+    p.form-p
+      Strong
+      label(for="activate") Activation - When do you want the posting to go live on the site?
+    p
+      input(type="date" id="activate" name="activate" value= job.datePosted)
+    p.form-p
+      Strong
+      label(for="expiry" ) Expiration - When do you want the posting to come off the site?
+    p
+      input(type="date" id="expiry" name="expiry" value= job.expiryDate)
+    p
+    textarea(type='text' id='contact' name='contact' placeholder='Contact Information')= job.contactInfo
+    p
+    input(type="text" id="source" name="source" placeholder='Link to external posting' value= job.source)
+    p
+    input(type="submit" value="Update Job")
+  script(src="/dom.js")

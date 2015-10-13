@@ -10,15 +10,15 @@ block content
         each err in errors
           li= err
     p.form-title Enter job information below:
-    input(type="text" id="title" name="title" placeholder="Job Title" autofocus)
+    input(type="text" id="title" name="title" placeholder="Job Title" autofocus value= job.jobTitle)
     p
-    input(type="text" id="company" name="company" placeholder='Company Name')
+    input(type="text" id="company" name="company" placeholder='Company Name' value= job.companyName)
     p
-    input(type="text" id="location" name="location" placeholder="Location (i.e. City, State)")
+    input(type="text" id="location" name="location" placeholder="Location (i.e. City, State)" value= job.location)
     p
-    textarea(type="text" id="description" name="description" placeholder='Job Description')
+    textarea(type="text" id="description" name="description" placeholder='Job Description' )= job.description
     p
-    textarea(type="text" id="experience" name="experience" placeholder='Qualifications/Experience')
+    textarea(type="text" id="experience" name="experience" placeholder='Qualifications/Experience')= job.experience
     //- div#dynamicInput
     //-   label(for="requirements") Requirements
     //-   input(type="text" name="myInputs[]")
@@ -28,16 +28,16 @@ block content
       Strong
       label(for="activate") Activation - When do you want the posting to go live on the site?
     p
-      input(type="date" id="activate" name="activate")
+      input(type="date" id="activate" name="activate" value= job.datePosted)
     p.form-p
       Strong
-      label(for="expiry") Expiration - When do you want the posting to come off the site?
+      label(for="expiry" ) Expiration - When do you want the posting to come off the site?
     p
-      input(type="date" id="expiry" name="expiry")
+      input(type="date" id="expiry" name="expiry" value= job.expiryDate)
     p
-    textarea(type='text' id='contact' name='contact' placeholder='Contact Information')
+    textarea(type='text' id='contact' name='contact' placeholder='Contact Information')= job.contactInfo
     p
-    input(type="text" id="source" name="source" placeholder='Link to external posting')
+    input(type="text" id="source" name="source" placeholder='Link to external posting' value= job.source)
     p
     input(type="submit" value="Post Job")
  script(src="/dom.js")
