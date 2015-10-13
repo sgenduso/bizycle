@@ -3,7 +3,7 @@ block content
   h1 Edit Job
   div.subtle-background
   div.cover
-  form#edit-job-form(action="/job/"+job._id+"/edit", method="post")
+  form#edit-job-form(action="/jobs/"+job._id+"/edit", method="post")
     if errors
       ol.errors
         each err in errors
