@@ -103,10 +103,10 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
           errors.appendChild(newError);
         } else {
           if(redirectPath.length === 0) {
-            window.location.replace('http://bike-job-board.herokuapp.com/');
+            window.location.replace('http://bizycle.herokuapp.com/');
           }
           else {
-            var redirectPath = "http://bike-job-board.herokuapp.com/" + redirectPath;
+            var redirectPath = "http://bizycle.herokuapp.com/" + redirectPath;
             window.location.replace(redirectPath);
           }
         }
@@ -151,10 +151,10 @@ for (var i = 0; i < notLoggedInElements.length; i++) {
           }
           else {
             if(redirectPath.length === 0) {
-              window.location.replace('http://bike-job-board.herokuapp.com/');
+              window.location.replace('http://bizycle.herokuapp.com/');
             }
             else {
-              var redirectPath = "http://bike-job-board.herokuapp.com/" + redirectPath;
+              var redirectPath = "http://bizycle.herokuapp.com/" + redirectPath;
               window.location.replace(redirectPath);
             }
           }
