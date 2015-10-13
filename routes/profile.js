@@ -28,7 +28,7 @@ router.get('/profile', function (req, res, next) {
 router.get('/jobs/:id/edit', function (req, res, next) {
   databaseQueries.findOneJob(req.params.id).then(function (job) {
     res.render('jobs/edit', {job: job});
-  })
+  });
 });
 
 router.post('/jobs/:id/edit', function (req, res, next) {
